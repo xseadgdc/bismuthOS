@@ -14,36 +14,63 @@ submit_filter(In, Out) :-
 %  Governs which changes are affected by the find-owners submit filter.
 %  Please keep clauses restricted to single projects, users, branches, or
 %  simple regex expressions.
-%  When opting-in projects be sure to only enable find-owners for the active
-%  development branch. This will typically be 'refs/heads/master'.
+%  find-owners is enabled by default for 'refs/heads/master' as well as the
+%  active development branch for projects which do not use master.
+%  Consult full.xml on the master branch of chromiumos/manifest for the list
+%  of active development branches.
 opt_in_find_owners :-
-    gerrit:change_project('chromiumos/chromite'),
     gerrit:change_branch('refs/heads/master').
 opt_in_find_owners :-
-    gerrit:change_project('chromiumos/docs'),
-    gerrit:change_branch('refs/heads/master').
+    gerrit:change_project('chromiumos/third_party/bluez'),
+    gerrit:change_branch('refs/heads/chromeos-5.44').
 opt_in_find_owners :-
-    gerrit:change_project(ProjectName),
-    regex_matches('chromiumos/infra/.*', ProjectName),
-    gerrit:change_branch('refs/heads/master').
+    gerrit:change_project('chromiumos/third_party/edk2'),
+    ( gerrit:change_branch('refs/heads/chromeos-2017.08')
+    ; gerrit:change_branch('refs/heads/chromeos-cml-branch1')
+    ; gerrit:change_branch('refs/heads/chromeos-cnl')
+    ; gerrit:change_branch('refs/heads/chromeos-glk')
+    ; gerrit:change_branch('refs/heads/chromeos-icl')
+    ).
 opt_in_find_owners :-
-    gerrit:change_project('chromiumos/manifest'),
-    gerrit:change_branch('refs/heads/master').
+    gerrit:change_project('chromiumos/third_party/fwupd'),
+    gerrit:change_branch('refs/heads/fwupd-1.2.5').
 opt_in_find_owners :-
-    gerrit:change_project('chromiumos/platform/tast'),
-    gerrit:change_branch('refs/heads/master').
+    gerrit:change_project('chromiumos/third_party/hostap'),
+    ( gerrit:change_branch('refs/heads/wpa_supplicant-2.6')
+    ; gerrit:change_branch('refs/heads/wpa_supplicant-2.8')
+    ).
 opt_in_find_owners :-
-    gerrit:change_project('chromiumos/platform/tast-tests'),
-    gerrit:change_branch('refs/heads/master').
+    ( gerrit:change_project('chromiumos/third_party/libsigrok')
+    ; gerrit:change_project('chromiumos/third_party/libsigrokdecode')
+    ; gerrit:change_project('chromiumos/third_party/libsigrok-cli')
+    ),
+    gerrit:change_branch('refs/heads/chromeos').
+opt_in_find_owners :-
+    gerrit:change_project('chromiumos/third_party/ltp'),
+    gerrit:change_branch('refs/heads/chromeos-20150119').
+opt_in_find_owners :-
+    gerrit:change_project('chromiumos/third_party/mesa'),
+    ( gerrit:change_branch('refs/heads/debian')
+    ; gerrit:change_branch('refs/heads/chromeos-freedreno')
+    ; gerrit:change_branch('refs/heads/mesa-img')
+    ).
+opt_in_find_owners :-
+    gerrit:change_project('chromiumos/third_party/pyelftools'),
+    gerrit:change_branch('refs/heads/master-0.22').
 opt_in_find_owners :-
     gerrit:change_project('chromiumos/third_party/portage_tool'),
     gerrit:change_branch('refs/heads/chromeos-2.3.49').
+opt_in_find_owners :-
+    gerrit:change_project('chromiumos/third_party/trousers'),
+    gerrit:change_branch('refs/heads/master-0.3.13').
 
 %% opt_out_find_owners
 %  Specifies exceptions to the conditions covered by opt_in_find_owners.
 %  Please keep clauses to simple cases as in opt_in_find_owners.
 opt_out_find_owners :-
-    false.
+    gerrit:change_project('chromiumos/third_party/kernel').
+opt_out_find_owners :-
+    gerrit:change_project('chromiumos/third_party/coreboot').
 
 %% check_find_owners(InputLabels, OutputLabels)
 %  If opt_out_find_owners is true, remove all 'Owner-Review-Vote' labels from
