@@ -145,6 +145,24 @@
     },
     {
       "key": {
+        "uuid": "069c5853_536643ad",
+        "filename": "rules.pl",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-07-12T22:15:36Z",
+      "side": 1,
+      "message": "OWNERS is awkward regardless of branching.  but some devs are asking for it anyways.\n\n\u003e but a branch owner should be able to own that branch across *every* repository.\n\nfor release branches, TPMs are the final owner.  but they aren\u0027t domain experts or individual repo owners.  a developer (anyone) files a bug and asks for permission to merge a change to a branch and the TPMs say yes/no.  but the only thing TPMs are checking is (1) the impact of the bug itself and (2) whatever the developer is claiming sounds reasonable.  they aren\u0027t verifying the developer is authorized (according to OWNERS) to do anything.\n\nbasically TPMs are relying on developers operating in good faith.  which is also how all branches work today -- we have no mechanism checking what CLs get merged into a branch and only allowing ones that have been approved (according to any rules).\n\nit gets back to \"we\u0027ve written some rules in a text document and expect everyone to read \u0026 follow them\".  which is how we\u0027ve always operated before OWNERS, so claiming it\u0027s redundant for branches while simultaneously saying it\u0027s not redundant for ToT doesn\u0027t line up.\n\ni\u0027m not saying we should enforce OWNERS on branches (or really anywhere :P), but i am saying that assuming that our flow today where TPMs say \"yes\" on a bug is entirely equivalent to OWNERS in ToT is incorrect.  TPMs don\u0027t exist for non-release branches (firmware/factory), so there\u0027s already a gap.\n\nwhether the wider developer community is OK with OWNERS not existing on non-ToT branches is a question that should be posed to them explicitly \u0026 documented as such.  i somewhat expect that the same people who think OWNERS files are the beesknees will want them enforced even on branches.",
+      "parentUuid": "a41d5c99_e22c4f27",
+      "revId": "d2b7183f3c808c2b1ac1e41c54fd54168a017834",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a9cd3a4d_33a8bf61",
         "filename": "rules.pl",
         "patchSetId": 2
