@@ -109,6 +109,24 @@
     },
     {
       "key": {
+        "uuid": "2b10c196_81655480",
+        "filename": "rules.pl",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000768
+      },
+      "writtenOn": "2019-07-12T21:48:06Z",
+      "side": 1,
+      "message": "100+ branches is a red herring.  people aren\u0027t landing CLs in every repo in a factory/firmware/release branch ... they\u0027re often touching a significantly smaller subset (\u003c10 for factory/firmware).  for releases, there\u0027s more, but that has the advantage of not being as stale, so OWNERS updates are not as big an issue.\n\nalso, the policy of \"commit must be in master first\" is an optimistic guideline.  depending on the age of the target branch, the patch might be significantly different, or it might never have been in master.  master-\u003erelease branches are usually more rubberstamps, but that\u0027s because of a freshness thing.\n\nit seems like the argument \"we have a policy where devs shouldn\u0027t be doing X thus OWNERS isn\u0027t necessary\" is exactly the same argument against having OWNERS files in the first place.  if people were following the policies we\u0027ve always had, then OWNERS would be useless.",
+      "parentUuid": "8093a7d5_4712772e",
+      "revId": "d2b7183f3c808c2b1ac1e41c54fd54168a017834",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a9cd3a4d_33a8bf61",
         "filename": "rules.pl",
         "patchSetId": 2
