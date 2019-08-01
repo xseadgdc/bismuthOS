@@ -8,7 +8,10 @@
 % https://gerrit.googlesource.com/plugins/find-owners/+doc/master/src/main/resources/Documentation/config.md
 
 submit_filter(In, Out) :-
-    check_find_owners(In, Out).
+    In =.. [submit | A],
+    check_branch_review(A, B),
+    Temp =.. [submit | B].
+    check_find_owners(Temp, Out).
 
 %% opt_in_find_owners
 %  Governs which changes are affected by the find-owners submit filter.
@@ -105,3 +108,28 @@ change_find_owners_labels([H1 | T], [H2 | R]) :-
     change_find_owners_labels(T, R).
 change_find_owners_labels([H | T], [H | R]) :-
     change_find_owners_labels(T, R).
+
+%% opt_in_branch_review
+%  This predicate controls which changes the Branch-Review label appears on.
+%  The Branch-Review label is required for submission on any CL on which it
+%  appears.
+%  Example: branch_review_required('refs/heads/firmware-.*').
+opt_in_branch_review :- false.
+
+%% opt_out_branch_review
+%  This predicate overrides the opt_in_branch_review predicate and causes
+%  the Branch-Review label to be removed from any CL for which opt_out is true.
+opt_out_branch_review :-
+    gerrit:commit_message_matches('^Exempt-From-Branch-Review:').
+
+%% check_branch_review(InputLabels, OutputLabels)
+%  This predicate removes the Branch-Review label if opt_out_branch_review is
+%  true, otherwise it preserves the Branch-Review label if opt_in_branch_review
+%  is true, otherwise it defaults to removing the Branch-Review label.
+check_branch_review(Ls, R) :-
+    (  opt_out_branch_review
+        -> gerrit:remove_label(Ls, label('Branch-Review', _), R)
+    ;  opt_in_branch_review -> R = Ls
+    ;  \+ opt_in_branch_review
+        -> gerrit:remove_label(Ls, label('Branch-Review', _), R)
+    ).
