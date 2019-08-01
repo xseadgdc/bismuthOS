@@ -8,7 +8,18 @@
 % https://gerrit.googlesource.com/plugins/find-owners/+doc/master/src/main/resources/Documentation/config.md
 
 submit_filter(In, Out) :-
-    check_find_owners(In, Out).
+    In =.. [submit | A],
+    check_branch_review(A, B),
+    Temp =.. [submit | B].
+    check_find_owners(Temp, Out).
+
+%% branch_review_required(Regex)
+%  This predicate enables the mandatory Branch-Review label for all branches
+%  matching the regex passed as an argument.
+%
+%  Example: branch_review_required('refs/heads/firmware-.*').
+branch_review_required(_) :- false.
+
 
 %% opt_in_find_owners
 %  Governs which changes are affected by the find-owners submit filter.
@@ -105,3 +116,24 @@ change_find_owners_labels([H1 | T], [H2 | R]) :-
     change_find_owners_labels(T, R).
 change_find_owners_labels([H | T], [H | R]) :-
     change_find_owners_labels(T, R).
+
+%% needs_branch_review
+%  Evaluates whether or not a branch should have the Branch-Review label kept,
+%  based on whether or not the branch name matches a regex specified via the
+%  predicate `branch_review_required/1`.
+%  CLs that include the line 'Exempt-From-Branch-Review:' in their commit
+%  message are automatically excluded from needing branch review.
+needs_branch_review :-
+    \+ gerrit:commit_message_matches('^Exempt-From-Branch-Review:'),
+    gerrit:change_branch(Branch),
+    branch_review_required(Pattern),
+    regex_matches(Pattern, Branch).
+
+check_branch_review(Ls, R) :-
+    (  needs_branch_review
+    -> R = Ls
+    ;  remove_label('Branch-Review', Ls, R)
+    ).
+
+remove_label(X, In, Out) :-
+    gerrit:remove_label(In, label(X, _), Out).
