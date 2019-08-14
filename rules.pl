@@ -10,7 +10,8 @@
 submit_filter(In, Out) :-
     In =.. [submit | A],
     check_branch_review(A, B),
-    Temp =.. [submit | B],
+    check_bot_commit(B, C),
+    Temp =.. [submit | C],
     check_find_owners(Temp, Out).
 
 %% opt_in_find_owners
@@ -74,6 +75,9 @@ opt_out_find_owners :-
     gerrit:change_project('chromiumos/third_party/kernel').
 opt_out_find_owners :-
     gerrit:change_project('chromiumos/third_party/coreboot').
+% Bot commits should always ignore OWNERS.
+opt_out_find_owners :-
+    gerrit:commit_label(label('Bot-Commit', 1), _).
 
 %% check_find_owners(InputLabels, OutputLabels)
 %  If opt_out_find_owners is true, remove all 'Owner-Review-Vote' labels from
@@ -132,3 +136,18 @@ check_branch_review(Ls, R) :-
     ;  \+ opt_in_branch_review
         -> gerrit:remove_label(Ls, label('Branch-Review', _), R)
     ).
+
+%% check_bot_commit(InputLabels, OutputLabels)
+%  This predicate checks for the existence of a 'Bot-Commit' +1 vote and
+%  if it is found removes the 'Code-Review' and 'Verified' labels entirely. If
+%  no 'Bot-Commit' vote is found, then this predicate removes the 'Bot-Commit'
+%  label entirely.
+%  The 'Bot-Commit' label is for use by automated bots to submit changes that
+%  are not intended for human review, but still need to go through the Commit
+%  Queue.
+check_bot_commit(Ls, R) :-
+(   gerrit:commit_label(label('Bot-Commit', 1), _)
+        -> (gerrit:remove_label(Ls, label('Code-Review', _), Temp),
+            gerrit:remove_label(Temp, label('Verified', _), R))
+;   gerrit:remove_label(Ls, label('Bot-Commit', _), R)
+).
