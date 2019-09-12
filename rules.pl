@@ -125,7 +125,9 @@ change_find_owners_labels([H | T], [H | R]) :-
 %  This predicate controls which changes the Branch-Review label appears on.
 %  The Branch-Review label is required for submission on any CL on which it
 %  appears.
-opt_in_branch_review :- false.
+opt_in_branch_review :-
+    gerrit:change_branch(Branch),
+    regex_matches('^refs/heads/release-R\\d+-.*', Branch).
 
 %% opt_out_branch_review
 %  This predicate overrides the opt_in_branch_review predicate and causes
