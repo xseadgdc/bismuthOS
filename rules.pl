@@ -14,6 +14,13 @@ submit_filter(In, Out) :-
     Temp =.. [submit | C],
     check_find_owners(Temp, Out).
 
+% Prune the special labels from commits applying to this root project repository.
+submit_rule(X) :-
+    X =.. [submit | A],
+    check_branch_review(A, B),
+    check_bot_commit(B, C),
+    gerrit:default_submit(C).
+
 %% opt_in_find_owners
 %  Governs which changes are affected by the find-owners submit filter.
 %  Please keep clauses restricted to single projects, users, branches, or
