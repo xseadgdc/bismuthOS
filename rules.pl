@@ -11,7 +11,8 @@ submit_filter(In, Out) :-
     In =.. [submit | A],
     check_branch_review(A, B),
     check_bot_commit(B, C),
-    Temp =.. [submit | C],
+    hide_lcq_label(C, D),
+    Temp =.. [submit | D],
     check_find_owners(Temp, Out).
 
 % Prune the special labels from commits applying to this root project repository.
@@ -20,7 +21,8 @@ submit_rule(Out) :-
     In =.. [submit | A],
     check_branch_review(A, B),
     check_bot_commit(B, C),
-    Out =.. [submit | C].
+    hide_lcq_label(C, D),
+    Out =.. [submit | d].
 
 %% opt_in_find_owners
 %  Governs which changes are affected by the find-owners submit filter.
@@ -159,3 +161,9 @@ check_bot_commit(Ls, R) :-
             gerrit:remove_label(Temp, label('Verified', _), R))
 ;   gerrit:remove_label(Ls, label('Bot-Commit', _), R)
 ).
+
+%% hide_lcq_label(InputLabels, OutputLabels)
+%  This predicate unconditionally removes the 'Legacy-Commit-Queue' label from
+%  all CLs.
+hide_lcq_label(Ls, R) :-
+    gerrit:remove_label(Ls, label('Legacy-Commit-Queue', _), R).
