@@ -35,6 +35,8 @@ submit_rule(Out) :-
 opt_in_find_owners :-
     gerrit:change_branch('refs/heads/master').
 opt_in_find_owners :-
+    gerrit:change_branch('refs/heads/main').
+opt_in_find_owners :-
     gerrit:change_project('chromiumos/third_party/bluez'),
     gerrit:change_branch('refs/heads/chromeos-5.44').
 opt_in_find_owners :-
