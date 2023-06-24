@@ -51,11 +51,11 @@
   <project name="chromium/src/tools/md_browser" path="src/chromium/src/tools/md_browser" remote="chromium" revision="6cc8e58a83412dc31de6fb7614fadb0b51748d4b" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromium/tools/depot_tools" path="src/chromium/depot_tools" remote="chromium" revision="e4ff80f5cf81d994f14c2f236aa71f840614746a" groups="minilayout,paygen,firmware,buildtools,labtools"/>
   <project name="chromiumos/bazel" path="src/bazel" revision="073638e6e09da6d3db8590555e4d3d26b5cb4ef5" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel"/>
-  <project name="chromiumos/chromite" path="chromite" revision="0e892c058528cbee938cea32e7e67104c077271b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm">
+  <project name="chromiumos/chromite" path="chromite" revision="d74a8bcfa26e5387b1da620f721752b367c51367" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm">
     <copyfile src="AUTHORS" dest="AUTHORS"/>
     <copyfile src="LICENSE" dest="LICENSE"/>
   </project>
-  <project name="chromiumos/chromite" path="infra/chromite-HEAD" revision="0e892c058528cbee938cea32e7e67104c077271b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,paygen">
+  <project name="chromiumos/chromite" path="infra/chromite-HEAD" revision="d74a8bcfa26e5387b1da620f721752b367c51367" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,paygen">
     <annotation name="branch-mode" value="tot"/>
   </project>
   <project name="chromiumos/config" path="src/config" revision="9d0c2d66c1457c1b06613592ebe7dcfb55ca487d" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="paygen,config,partner-config"/>
@@ -101,8 +101,8 @@
   </project>
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver"/>
   <project name="chromiumos/manifest" path="manifest" revision="63b1588f97d3431ebe2d7de781637cd5c56c16cb" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
-  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="1b63077b06d1bec91e326b31b98cc7347c8be046" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware"/>
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="813eb5d8c5c4aa2e89d7ef6480d032019cefdd15" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
+  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="97d2a5bbdaaf5103ef65e5a383deadebd8efe2dd" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware"/>
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="bcaf995438ff55bd226e0c1eb87ccf50af0075b9" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="85fc70cafbfe2710f0e8d69fafe653e4ca8e7ba8" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="756cf5bb7d05c8e4576f5fc52de34391b398d171" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="99b31dddd62e9a1daf5c72d0c08ba9b9dafd2998" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
@@ -317,11 +317,11 @@
   <project name="external/git.kernel.org/fs/xfs/xfstests-dev" path="src/third_party/xfstests" revision="596db5ee91823292e64c842c64010571a3d6ca74" upstream="refs/heads/master" dest-branch="refs/heads/master"/>
   <project name="external/github.com/google/googletest" path="src/third_party/googletest" revision="8fa9461cc28e053d66f17132808d287ae51575e2" groups="firmware"/>
   <project name="external/github.com/include-what-you-use/include-what-you-use" path="src/third_party/include-what-you-use" revision="14e9b208914a84fcdf49bf9f5d08897a4b3dc4b8"/>
-  <project name="external/github.com/llvm/llvm-project" path="src/third_party/llvm-project" revision="c9a8a0e8a9b267fae0352af352e9c735fef019f7" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault,bazel"/>
+  <project name="external/github.com/llvm/llvm-project" path="src/third_party/llvm-project" revision="b0440e51a8302e94089219edcf25173eb69a05dc" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault,bazel"/>
   <project name="external/github.com/rostedt/ureadahead" path="src/third_party/ureadahead" revision="e004b814b2a75abaeb7cd1338e1079416421ba69"/>
   <project name="external/gitlab.com/libeigen/eigen" path="src/third_party/eigen3" revision="c18f94e3b017104284cd541e553472e62e85e526" groups="firmware"/>
   <project name="external/gob/boringssl/boringssl" path="src/third_party/boringssl" revision="e0d601a57fde7d67a1c771e7d87468faf1f8fe55" groups="firmware"/>
-  <project name="external/pigweed/pigweed/pigweed" path="src/third_party/pigweed" revision="a6477acd8b824de6b8f3b7067ef76f3a1418fff6" upstream="refs/heads/upstream/main" dest-branch="refs/heads/upstream/main"/>
+  <project name="external/pigweed/pigweed/pigweed" path="src/third_party/pigweed" revision="49c6ab689b7691ba7a0db3c5f049a47c8099a168" upstream="refs/heads/upstream/main" dest-branch="refs/heads/upstream/main"/>
   <project name="infra/cop" revision="ffcaff56a40efac6ec742ee1dac476d7a80f81fb" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="drop"/>
   </project>
