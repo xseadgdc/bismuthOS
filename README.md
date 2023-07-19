@@ -102,6 +102,11 @@ List of specific annotations we use:
         with a branch name for performing bisection. The kernel continuous rebase
         branches can't be directly used for bisection because there is no linear
         history between two KCR rebases.
+    *   `branch-suffix` and `no-branch-suffix`. Used to override default branching
+        behavior for projects with multiple checkouts. `no-branch-suffix` will
+        drop any sort of suffix. `branch-suffix` provides a custom suffix to be
+        used for that checkout (note that `branch_util` already prefixes the
+        suffix with a `-`, so you shouldn't include one in the annotation).
 *   `<remote>`
     *   `public`: `true`, `false` (default). Whether the remote is publicly
         accessible (i.e. external). Currently used by the Manifest Doctor to
