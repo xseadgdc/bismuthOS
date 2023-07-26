@@ -10,20 +10,20 @@
   <!-- Common projects for developing CrOS. -->
   <project path="src/repohooks"
            name="chromiumos/repohooks"
-           groups="minilayout,paygen,firmware,buildtools,labtools,crosvm" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,buildtools,labtools,crosvm" revision="refs/heads/stabilize-15509.37.B" />
   <repo-hooks in-project="chromiumos/repohooks"
               enabled-list="pre-upload" />
   <project path="chromite"
            name="chromiumos/chromite"
-           groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm" revision="refs/heads/release-R116-15509.B">
+           groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm" revision="refs/heads/stabilize-15509.37.B">
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
   <project path="chromite/infra/proto"
-           name="chromiumos/infra/proto" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/infra/proto" revision="refs/heads/stabilize-15509.37.B" />
   <project path="chromite/third_party/pyelftools"
            name="chromiumos/third_party/pyelftools"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="minilayout,paygen,firmware,buildtools" />
   <project path="chromite/third_party/swarming.client"
            remote="chromium"
@@ -36,13 +36,13 @@
     <annotation name="branch-mode" value="pin" />
   </project>
   <project path="manifest"
-           name="chromiumos/manifest" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/manifest" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/config"
            name="chromiumos/config"
-           groups="paygen,config,partner-config" revision="refs/heads/release-R116-15509.B" />
+           groups="paygen,config,partner-config" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/overlays"
            name="chromiumos/overlays/board-overlays"
-           groups="minilayout,paygen,firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/empty-project"
            name="chromiumos/infra/build/empty-project"
            revision="d2d95e8af89939f893b1443135497c1f5572aebc"
@@ -53,136 +53,136 @@
   </project>
   <project path="src/project_public"
            name="chromiumos/project"
-           groups="partner-config" revision="refs/heads/release-R116-15509.B" />
+           groups="partner-config" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/scripts"
            name="chromiumos/platform/crosutils"
-           groups="minilayout,paygen,firmware,buildtools,labtools" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,buildtools,labtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/bazel"
            name="chromiumos/bazel"
-           groups="minilayout,bazel" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,bazel" revision="refs/heads/stabilize-15509.37.B" />
 
   <!-- Platform projects. -->
   <!-- TODO(b/187795634): Drop minilayout,paygen once common-mk/ tooling moves to
        chromite. -->
   <project path="src/platform2"
            name="chromiumos/platform2"
-           groups="minilayout,paygen,crosvm,config,partner-config" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,crosvm,config,partner-config" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/assets"
-           name="chromiumos/platform/assets" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/assets" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/audiotest"
-           name="chromiumos/platform/audiotest" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/audiotest" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/bisect-kit"
-           name="chromiumos/platform/bisect-kit" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/bisect-kit" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/bluetooth"
-           name="chromiumos/platform/bluetooth" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/bluetooth" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/bmpblk"
-           name="chromiumos/platform/bmpblk" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/bmpblk" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/btsocket"
-           name="chromiumos/platform/btsocket" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/btsocket" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/camera"
-           name="chromiumos/platform/camera" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/camera" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/cbor"
-           name="chromiumos/platform/cbor" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/cbor" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/cfm-device-monitor"
-           name="chromiumos/platform/cfm-device-monitor" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/cfm-device-monitor" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/chameleon"
-           name="chromiumos/platform/chameleon" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/chameleon" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/chromiumos-assets"
-           name="chromiumos/platform/chromiumos-assets" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/chromiumos-assets" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/container-guest-tools"
-           name="chromiumos/containers/cros-container-guest-tools" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/containers/cros-container-guest-tools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/cr50"
            name="chromiumos/platform/ec"
-           revision="refs/heads/release-R116-15509.B-cr50_stab"
+           revision="refs/heads/stabilize-15509.37.B-cr50_stab"
            groups="paygen,firmware" />
   <project path="src/platform/crdyboot"
-           name="chromiumos/platform/crdyboot" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/crdyboot" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/crostestutils"
            name="chromiumos/platform/crostestutils"
-           groups="minilayout,paygen,firmware,buildtools" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,buildtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/crosvm"
            name="chromiumos/platform/crosvm"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="crosvm" />
   <project path="src/platform/depthcharge"
            name="chromiumos/platform/depthcharge"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/dev"
            name="chromiumos/platform/dev-util"
-           groups="minilayout,paygen,firmware,buildtools,devserver" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,buildtools,devserver" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/drm-tests"
-           name="chromiumos/platform/drm-tests" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/drm-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/ec"
            name="chromiumos/platform/ec"
-           groups="paygen,firmware" revision="refs/heads/release-R116-15509.B-main" />
+           groups="paygen,firmware" revision="refs/heads/stabilize-15509.37.B-main" />
   <project path="src/platform/factory"
-           name="chromiumos/platform/factory" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/factory" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/factory_installer"
-           name="chromiumos/platform/factory_installer" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/factory_installer" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/feature-management"
-           name="chromiumos/platform/feature-management" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/feature-management" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/firmware"
            name="chromiumos/platform/firmware"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/frecon"
-           name="chromiumos/platform/frecon" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/frecon" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/gestures"
-           name="chromiumos/platform/gestures" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/gestures" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/glbench"
-           name="chromiumos/platform/glbench" revision="refs/heads/release-R116-15509.B-main" />
+           name="chromiumos/platform/glbench" revision="refs/heads/stabilize-15509.37.B-main" />
   <project path="src/platform/glbench-debian"
            name="chromiumos/platform/glbench"
-           revision="refs/heads/release-R116-15509.B-debian"
+           revision="refs/heads/stabilize-15509.37.B-debian"
            groups="notdefault,crostini" />
   <project path="src/platform/graphics"
-           name="chromiumos/platform/graphics" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/graphics" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/graphyte"
-           name="chromiumos/graphyte" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/graphyte" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/gsc-utils"
            name="chromiumos/platform/ec"
-           revision="refs/heads/release-R116-15509.B-gsc_utils" />
+           revision="refs/heads/stabilize-15509.37.B-gsc_utils" />
   <project path="src/platform/hps-firmware2"
-           name="chromiumos/platform/hps-firmware" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/hps-firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/hps-firmware-images"
-           name="chromiumos/platform/hps-firmware-images" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/hps-firmware-images" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/initramfs"
-           name="chromiumos/platform/initramfs" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/initramfs" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/inputcontrol"
-           name="chromiumos/platform/inputcontrol" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/inputcontrol" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/ish"
            name="chromiumos/platform/ec"
-           revision="refs/heads/release-R116-15509.B-ish"
+           revision="refs/heads/stabilize-15509.37.B-ish"
            groups="firmware" />
   <project path="src/platform/jabra_vold"
-           name="chromiumos/platform/jabra_vold" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/jabra_vold" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/libchrome"
-           name="chromiumos/platform/libchrome" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/libchrome" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/libevdev"
-           name="chromiumos/platform/libevdev" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/libevdev" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/libevstate"
-           name="chromiumos/platform/libevstate" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/libevstate" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/lithium"
            name="chromiumos/platform/lithium"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/microbenchmarks"
-           name="chromiumos/platform/microbenchmarks" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/microbenchmarks" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/minigbm"
            name="chromiumos/platform/minigbm"
-           groups="crosvm" revision="refs/heads/release-R116-15509.B" />
+           groups="crosvm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/minijail"
            name="chromiumos/platform/minijail"
-           groups="crosvm" revision="refs/heads/release-R116-15509.B" />
+           groups="crosvm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/moblab"
            name="chromiumos/platform/moblab"
-           groups="notdefault,moblab" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,moblab" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/mosys"
-           name="chromiumos/platform/mosys" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/mosys" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/mttools"
-           name="chromiumos/platform/mttools" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/mttools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/pinweaver"
-           name="chromiumos/platform/pinweaver" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/pinweaver" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/redaction_tool"
-           name="chromiumos/platform/redaction_tool" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/redaction_tool" revision="refs/heads/stabilize-15509.37.B" />
   <!-- EC-based release firmware.
        See http://go/cros-fingerprint-firmware-branching-and-signing -->
   <project path="src/platform/release-firmware/fpmcu-bloonchipper"
@@ -214,90 +214,90 @@
     <annotation name="branch-mode" value="pin" />
   </project>
   <project path="src/platform/rules_cros"
-           name="chromiumos/platform/rules_cros" revision="refs/heads/release-R116-15509.B">
+           name="chromiumos/platform/rules_cros" revision="refs/heads/stabilize-15509.37.B">
     <linkfile src="workspace_root/MODULE.bazel" dest="src/MODULE.bazel" />
   </project>
   <project path="src/platform/satlab"
            name="chromiumos/platform/satlab"
-           groups="notdefault,satlab" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,satlab" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/spdm"
-           name="chromiumos/platform/spdm" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/spdm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/tast"
            name="chromiumos/platform/tast"
-           groups="minilayout,paygen" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/tast-tests"
            name="chromiumos/platform/tast-tests"
-           groups="minilayout,paygen" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/tast-tests/src/go.chromium.org/tast-tests/cros/remote/firmware/data/fw-testing-configs"
            name="chromiumos/platform/fw-testing-configs"
-           groups="paygen,buildtools,labtools,devserver,firmware" revision="refs/heads/release-R116-15509.B-main" />
+           groups="paygen,buildtools,labtools,devserver,firmware" revision="refs/heads/stabilize-15509.37.B-main" />
   <project path="src/platform/tauto"
-           name="chromiumos/platform/tauto" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/tauto" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/touch_firmware_test"
            name="chromiumos/platform/touch_firmware_test"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/touch_updater"
-           name="chromiumos/platform/touch_updater" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/touch_updater" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/touchpad-tests"
-           name="chromiumos/platform/touchpad-tests" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/touchpad-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/tpm_lite"
-           name="chromiumos/platform/tpm_lite" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/tpm_lite" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/tremplin"
-           name="chromiumos/platform/tremplin" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/tremplin" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/usi-test"
-           name="chromiumos/platform/usi-test" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/usi-test" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/vboot_reference"
            name="chromiumos/platform/vboot_reference"
-           groups="paygen,firmware,buildtools" revision="refs/heads/release-R116-15509.B" />
+           groups="paygen,firmware,buildtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/vkbench"
-           name="chromiumos/platform/vkbench" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/vkbench" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/vpd"
-           name="chromiumos/platform/vpd" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/vpd" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/xolabs-common-core"
            name="chromiumos/platform/xolabs-common-core"
-           groups="notdefault,xolabs" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,xolabs" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/platform/xorg-conf"
-           name="chromiumos/platform/xorg-conf" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/platform/xorg-conf" revision="refs/heads/stabilize-15509.37.B" />
 
   <!-- Third party projects. -->
   <project path="src/third_party/adhd"
            name="chromiumos/third_party/adhd"
-           groups="crosvm" revision="refs/heads/release-R116-15509.B" />
+           groups="crosvm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/amd-firmware/binarypi/picasso-edk2"
            name="chromiumos/third_party/edk2"
-           revision="refs/heads/release-R116-15509.B-pco"
+           revision="refs/heads/stabilize-15509.37.B-pco"
            groups="firmware" />
   <project path="src/third_party/ap_wpsr"
            name="chromiumos/third_party/ap_wpsr"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/apitrace"
            name="chromiumos/third_party/apitrace"
-           revision="refs/heads/release-R116-15509.B-master" />
+           revision="refs/heads/stabilize-15509.37.B-master" />
   <project path="src/third_party/apitrace-debian"
            name="chromiumos/third_party/apitrace"
-           revision="refs/heads/release-R116-15509.B-debian"
+           revision="refs/heads/stabilize-15509.37.B-debian"
            groups="notdefault,crostini" />
   <project path="src/third_party/arm-trusted-firmware"
            name="chromiumos/third_party/arm-trusted-firmware"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/atrusctl"
            name="chromiumos/third_party/atrusctl"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/autotest/files"
            name="chromiumos/third_party/autotest"
-           groups="buildtools,labtools,devserver" revision="refs/heads/release-R116-15509.B" />
+           groups="buildtools,labtools,devserver" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/autotest/files/server/cros/faft/fw-testing-configs"
            name="chromiumos/platform/fw-testing-configs"
-           groups="buildtools,labtools,devserver,firmware" revision="refs/heads/release-R116-15509.B-main" />
+           groups="buildtools,labtools,devserver,firmware" revision="refs/heads/stabilize-15509.37.B-main" />
   <project path="src/third_party/aver-updater"
            name="chromiumos/third_party/aver-updater"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/bluez/current"
            name="chromiumos/third_party/bluez"
-           revision="refs/heads/release-R116-15509.B-chromeos-5.54" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-5.54" />
   <project path="src/third_party/bluez/next"
            name="chromiumos/third_party/bluez"
-           revision="refs/heads/release-R116-15509.B-chromeos-5.54" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-5.54" />
   <project path="src/third_party/bluez/upstream"
            name="chromiumos/third_party/bluez"
            revision="ddd09531e936508ba9ea620f9caaf3402c54496f">
@@ -307,7 +307,7 @@
   </project>
   <project path="src/third_party/bootstub"
            name="chromiumos/third_party/bootstub"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/boringssl"
            name="external/gob/boringssl/boringssl"
            revision="e0d601a57fde7d67a1c771e7d87468faf1f8fe55"
@@ -323,63 +323,63 @@
            revision="9719c1e1e676814c456b55f5f070eabad6709d31" />
   <project path="src/third_party/cbootimage"
            name="chromiumos/third_party/cbootimage"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/chre"
            name="chromiumos/third_party/chre"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/chromiumos-overlay"
            name="chromiumos/overlays/chromiumos-overlay"
            groups="minilayout,paygen,firmware,labtools"
-           sync-c="true" revision="refs/heads/release-R116-15509.B" />
+           sync-c="true" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/clspv"
            name="chromiumos/third_party/clspv"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/clvk"
            name="chromiumos/third_party/clvk"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/coreboot"
            name="chromiumos/third_party/coreboot"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/coreboot/3rdparty/amd_blobs"
            name="chromiumos/third_party/coreboot/amd_blobs"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/coreboot/3rdparty/blobs"
            name="chromiumos/third_party/coreboot/blobs"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/coreboot/3rdparty/intel-microcode"
            name="chromiumos/third_party/coreboot/intel-microcode"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/coreboot/3rdparty/libgfxinit"
            name="chromiumos/third_party/coreboot/libgfxinit"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/coreboot/3rdparty/libhwbase"
            name="chromiumos/third_party/coreboot/libhwbase"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/coreboot/3rdparty/qc_blobs"
            name="chromiumos/third_party/coreboot/qc_blobs"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/cros-adapta"
            name="chromiumos/third_party/cros-adapta"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/cryptoc"
            name="chromiumos/third_party/cryptoc"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/cups"
            name="chromiumos/third_party/cups"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/daisydog"
-           name="chromiumos/third_party/daisydog" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/daisydog" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/eclass-overlay"
            name="chromiumos/overlays/eclass-overlay"
-           groups="minilayout,paygen,firmware,labtools" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,labtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/edk2"
            name="chromiumos/third_party/edk2"
-           revision="refs/heads/release-R116-15509.B-chromeos-2017.08"
+           revision="refs/heads/stabilize-15509.37.B-chromeos-2017.08"
            groups="firmware" />
   <project path="src/third_party/eigen3"
            name="external/gitlab.com/libeigen/eigen"
@@ -387,304 +387,304 @@
            groups="firmware" />
   <project path="src/third_party/em100"
            name="chromiumos/third_party/em100"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/fastrpc"
            name="chromiumos/third_party/fastrpc"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/flashmap"
            name="chromiumos/third_party/flashmap"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware" />
   <project path="src/third_party/flashrom"
            name="chromiumos/third_party/flashrom"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="paygen,firmware" />
   <project path="src/third_party/fsp/cml/edk2/branch1"
            name="chromiumos/third_party/edk2"
-           revision="refs/heads/release-R116-15509.B-chromeos-cml-branch1"
+           revision="refs/heads/stabilize-15509.37.B-chromeos-cml-branch1"
            groups="firmware" />
   <project path="src/third_party/fsp/cnl/edk2"
            name="chromiumos/third_party/edk2"
-           revision="refs/heads/release-R116-15509.B-chromeos-cnl"
+           revision="refs/heads/stabilize-15509.37.B-chromeos-cnl"
            groups="firmware" />
   <project path="src/third_party/fsp/glk/edk2"
            name="chromiumos/third_party/edk2"
-           revision="refs/heads/release-R116-15509.B-chromeos-glk"
+           revision="refs/heads/stabilize-15509.37.B-chromeos-glk"
            groups="firmware" />
   <project path="src/third_party/fwupd"
            name="chromiumos/third_party/fwupd"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/googletest"
            name="external/github.com/google/googletest"
            revision="8fa9461cc28e053d66f17132808d287ae51575e2"
            groups="firmware" />
   <project path="src/third_party/hdctools"
            name="chromiumos/third_party/hdctools"
-           groups="paygen,labtools" revision="refs/heads/release-R116-15509.B" />
+           groups="paygen,labtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/huddly-updater"
            name="chromiumos/third_party/huddly-updater"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/igt-gpu-tools"
            name="chromiumos/third_party/igt-gpu-tools"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/include-what-you-use"
            name="external/github.com/include-what-you-use/include-what-you-use"
            revision="14e9b208914a84fcdf49bf9f5d08897a4b3dc4b8" />
   <project path="src/third_party/intel-wifi-fw-dump"
-           name="chromiumos/third_party/intel-wifi-fw-dump" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/intel-wifi-fw-dump" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/kernel/kcam"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-kcam-6.1"
+           revision="refs/heads/stabilize-15509.37.B-kcam-6.1"
            groups="notdefault,kcam" />
   <project path="src/third_party/kernel/pkvm-ia-5.19"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-merge-pkvm-ia-5.19" />
+           revision="refs/heads/stabilize-15509.37.B-merge-pkvm-ia-5.19" />
   <project path="src/third_party/kernel/v4.4"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-4.4" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-4.4" />
   <project path="src/third_party/kernel/v4.14"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-4.14" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-4.14" />
   <project path="src/third_party/kernel/v4.19"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-4.19" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-4.19" />
   <project path="src/third_party/kernel/v5.4"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-5.4" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-5.4" />
   <project path="src/third_party/kernel/v5.10"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-5.10" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-5.10" />
   <project path="src/third_party/kernel/v5.10-arcvm"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-5.10-arcvm" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-5.10-arcvm" />
   <project path="src/third_party/kernel/v5.15"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-5.15" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-5.15" />
   <project path="src/third_party/kernel/v6.1"
            name="chromiumos/third_party/kernel"
-           revision="refs/heads/release-R116-15509.B-chromeos-6.1" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-6.1" />
   <project path="src/third_party/khronos"
            name="chromiumos/third_party/khronos"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/labpack/files"
            name="chromiumos/third_party/labpack"
-           groups="labtools" revision="refs/heads/release-R116-15509.B" />
+           groups="labtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/lexmark-fax-pnh"
            name="chromiumos/third_party/lexmark-fax-pnh"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libapps"
-           name="apps/libapps" revision="c0f640a6e09ef090019cdba154cd56eaa3fe7d22">
+           name="apps/libapps" revision="052895604029bf6d091279013f429a11f73ecb0f">
     <annotation name="branch-mode" value="pin" />
   </project>
   <project path="src/third_party/libcamera"
            name="chromiumos/third_party/libcamera"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libdrm"
            name="chromiumos/third_party/libdrm"
-           revision="refs/heads/release-R116-15509.B-upstream-main" />
+           revision="refs/heads/stabilize-15509.37.B-upstream-main" />
   <project path="src/third_party/libdrm-debian"
            name="chromiumos/third_party/libdrm"
-           revision="refs/heads/release-R116-15509.B-debian"
+           revision="refs/heads/stabilize-15509.37.B-debian"
            groups="notdefault,crostini" />
   <project path="src/third_party/libdrm-debian-bullseye"
            name="chromiumos/third_party/libdrm"
-           revision="refs/heads/release-R116-15509.B-debian-bullseye"
+           revision="refs/heads/stabilize-15509.37.B-debian-bullseye"
            groups="notdefault,crostini" />
   <project path="src/third_party/libdrm-debian-buster"
            name="chromiumos/third_party/libdrm"
-           revision="refs/heads/release-R116-15509.B-debian-buster"
+           revision="refs/heads/stabilize-15509.37.B-debian-buster"
            groups="notdefault,crostini" />
   <project path="src/third_party/libiio"
            name="chromiumos/third_party/libiio"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libmbim"
-           name="chromiumos/third_party/libmbim" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/libmbim" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libqmi"
-           name="chromiumos/third_party/libqmi" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/libqmi" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libqrtr"
            name="chromiumos/third_party/libqrtr"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libqrtr-glib"
-           name="chromiumos/third_party/libqrtr-glib" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/libqrtr-glib" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libtextclassifier"
            name="chromiumos/third_party/libtextclassifier"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/libv4lplugins"
            name="chromiumos/third_party/libv4lplugins"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/linux-firmware"
            name="chromiumos/third_party/linux-firmware"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/llvm-project"
            name="external/github.com/llvm/llvm-project"
            groups="notdefault,bazel" revision="cb9ac7051589ea0d05507f9370d0716bef86b4ae" />
   <project path="src/third_party/logitech-updater"
            name="chromiumos/third_party/logitech-updater"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/marvell"
            name="chromiumos/third_party/marvell"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/mesa"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-upstream-main" />
+           revision="refs/heads/stabilize-15509.37.B-upstream-main" />
   <project path="src/third_party/mesa-amd"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-chromeos-amd" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-amd" />
   <project path="src/third_party/mesa-arcvm"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-chromeos-arcvm" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-arcvm" />
   <project path="src/third_party/mesa-debian"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-debian" />
+           revision="refs/heads/stabilize-15509.37.B-debian" />
   <project path="src/third_party/mesa-debian-bullseye"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-debian-bullseye" />
+           revision="refs/heads/stabilize-15509.37.B-debian-bullseye" />
   <project path="src/third_party/mesa-debian-buster"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-debian-buster" />
+           revision="refs/heads/stabilize-15509.37.B-debian-buster" />
   <project path="src/third_party/mesa-freedreno"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-chromeos-freedreno" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-freedreno" />
   <project path="src/third_party/mesa-img"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-mesa-19.0" />
+           revision="refs/heads/stabilize-15509.37.B-mesa-19.0" />
   <project path="src/third_party/mesa-iris"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-chromeos-iris" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-iris" />
   <project path="src/third_party/mesa-reven"
            name="chromiumos/third_party/mesa"
-           revision="refs/heads/release-R116-15509.B-chromeos-reven" />
+           revision="refs/heads/stabilize-15509.37.B-chromeos-reven" />
   <project path="src/third_party/mimo-updater"
            name="chromiumos/third_party/mimo-updater"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/mmc-utils"
            name="chromiumos/third_party/mmc-utils"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/modemmanager-next"
-           name="chromiumos/third_party/modemmanager-next" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/modemmanager-next" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/modp_b64"
            name="aosp/platform/external/modp_b64"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/novatek-tcon-fw-update-tool"
            name="chromiumos/third_party/novatek-tcon-fw-update-tool"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/optee_os"
            name="chromiumos/third_party/OP-TEE/optee_os"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/optofidelity_chrome_touch_client"
            name="chromiumos/third_party/optofidelity_chrome_touch_client"
-           groups="notdefault,touch-firmware-tests" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,touch-firmware-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/optofidelity_chromeos_touch_sender"
            name="chromiumos/third_party/optofidelity_chromeos_touch_sender"
-           groups="notdefault,touch-firmware-tests" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,touch-firmware-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/optofidelity_protocols"
            name="chromiumos/third_party/optofidelity_protocols"
-           groups="notdefault,touch-firmware-tests" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,touch-firmware-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/optofidelity_TPPT"
            name="chromiumos/third_party/optofidelity_TPPT"
-           groups="notdefault,touch-firmware-tests" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,touch-firmware-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/optofidelity_TPPT_analysis"
            name="chromiumos/third_party/optofidelity_TPPT_analysis"
-           groups="notdefault,touch-firmware-tests" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,touch-firmware-tests" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/pigweed"
            name="external/pigweed/pigweed/pigweed"
            revision="45b1073516c7f9bd949f1004505abc89f31abbd4" />
   <project path="src/third_party/poly-updater"
-           name="chromiumos/third_party/poly-updater" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/poly-updater" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/portage-stable"
            name="chromiumos/overlays/portage-stable"
-           groups="minilayout,paygen,firmware,labtools" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,labtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/portage_tool"
            name="chromiumos/third_party/portage_tool"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/rootdev"
-           name="chromiumos/third_party/rootdev" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/rootdev" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/rust-vmm/vhost"
            name="chromiumos/third_party/rust-vmm/vhost"
-           groups="crosvm" revision="refs/heads/release-R116-15509.B" />
+           groups="crosvm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/rust_crates"
-           name="chromiumos/third_party/rust_crates" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/rust_crates" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/shellcheck"
            name="chromiumos/third_party/shellcheck"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/sis-updater"
            name="chromiumos/third_party/sis-updater"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/sound-open-firmware"
            name="chromiumos/third_party/sound-open-firmware"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/svunit"
            name="chromiumos/third_party/svunit"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/systemd"
            name="chromiumos/third_party/systemd"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/tlsdate"
            name="chromiumos/third_party/tlsdate"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/toolchain-utils"
            name="chromiumos/third_party/toolchain-utils"
-           groups="minilayout,paygen" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/toolchains-overlay"
            name="chromiumos/overlays/toolchains"
-           groups="minilayout,paygen,firmware,labtools" revision="refs/heads/release-R116-15509.B" />
+           groups="minilayout,paygen,firmware,labtools" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/tpm"
            name="chromiumos/platform/tpm"
-           groups="firmware" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/tpm2"
            name="chromiumos/third_party/tpm2"
-           groups="firmware,crosvm" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware,crosvm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/trousers"
            name="chromiumos/third_party/trousers"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/u-boot/files"
            name="chromiumos/third_party/u-boot"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/upstart"
            name="chromiumos/third_party/upstart"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/ureadahead"
            name="external/github.com/rostedt/ureadahead"
            revision="e004b814b2a75abaeb7cd1338e1079416421ba69" />
   <project path="src/third_party/virglrenderer"
            name="chromiumos/third_party/virglrenderer"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="crosvm" />
   <project path="src/third_party/virtual-usb-printer"
            name="chromiumos/third_party/virtual-usb-printer"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/webrtc-apm"
-           name="chromiumos/third_party/webrtc-apm" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/third_party/webrtc-apm" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/Wi-FiTestSuite-Linux-DUT"
            name="chromiumos/third_party/Wi-FiTestSuite-Linux-DUT"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/wpa_supplicant"
            name="chromiumos/third_party/hostap"
-           revision="refs/heads/release-R116-15509.B-master" />
+           revision="refs/heads/stabilize-15509.37.B-master" />
   <project path="src/third_party/wpa_supplicant-cros/current"
            name="chromiumos/third_party/hostap"
-           revision="refs/heads/release-R116-15509.B-wpa_supplicant-2.10.0" />
+           revision="refs/heads/stabilize-15509.37.B-wpa_supplicant-2.10.0" />
   <project path="src/third_party/wpa_supplicant-cros/next"
            name="chromiumos/third_party/hostap"
-           revision="refs/heads/release-R116-15509.B-wpa_supplicant-2.10.0" />
+           revision="refs/heads/stabilize-15509.37.B-wpa_supplicant-2.10.0" />
   <project path="src/third_party/xfstests"
            name="external/git.kernel.org/fs/xfs/xfstests-dev"
            revision="596db5ee91823292e64c842c64010571a3d6ca74" />
   <project path="src/third_party/zephyr/cmsis"
            name="chromiumos/third_party/zephyr/cmsis"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware,zephyr" />
   <project path="src/third_party/zephyr/hal_stm32"
            name="chromiumos/third_party/zephyr/hal_stm32"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="firmware,zephyr" />
   <project path="src/third_party/zephyr/main"
            name="chromiumos/third_party/zephyr"
-           groups="firmware,zephyr" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware,zephyr" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/third_party/zephyr/nanopb"
            name="chromiumos/third_party/zephyr/nanopb"
-           groups="firmware,zephyr" revision="refs/heads/release-R116-15509.B" />
+           groups="firmware,zephyr" revision="refs/heads/stabilize-15509.37.B" />
 
   <!-- Chromium repositories.
        We try to check out repos under src/chromium/ using the same layout as a
@@ -728,7 +728,7 @@
            groups="paygen" />
   <project path="src/aosp/external/libutf"
            name="aosp/platform/external/libutf"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/external/marisa-trie"
            remote="aosp"
            name="platform/external/marisa-trie"
@@ -746,15 +746,15 @@
            revision="1f040439f678d124eb29c7ccffc98a7d06efbced"
            groups="paygen" />
   <project path="src/aosp/external/uwb/local"
-           name="aosp/platform/external/uwb" revision="refs/heads/release-R116-15509.B-main" />
+           name="aosp/platform/external/uwb" revision="refs/heads/stabilize-15509.37.B-main" />
   <project path="src/aosp/external/uwb/upstream"
            name="aosp/platform/external/uwb"
-           revision="refs/heads/release-R116-15509.B-upstream-master" />
+           revision="refs/heads/stabilize-15509.37.B-upstream-master" />
   <project path="src/aosp/frameworks/ml"
-           name="aosp/platform/frameworks/ml" revision="refs/heads/release-R116-15509.B" />
+           name="aosp/platform/frameworks/ml" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/frameworks/native"
            name="aosp/platform/frameworks/native"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/frameworks/proto_logging"
            name="aosp/platform/frameworks/proto_logging"
            revision="a7d6a7cd435acb9fd405f96b83ff5e43f8cc966f"
@@ -763,10 +763,10 @@
   </project>
   <project path="src/aosp/hardware/interfaces/neuralnetworks"
            name="aosp/platform/hardware/interfaces/neuralnetworks"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/packages/modules/Bluetooth/local"
            name="aosp/platform/packages/modules/Bluetooth"
-           groups="notdefault,bluetooth,bazel" revision="refs/heads/release-R116-15509.B" />
+           groups="notdefault,bluetooth,bazel" revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/packages/modules/Bluetooth/upstream"
            name="aosp/platform/packages/modules/Bluetooth"
            revision="45762a9ba3a32c8739376cc0eef813195325772c"
@@ -775,19 +775,19 @@
   </project>
   <project path="src/aosp/system/core/base"
            name="aosp/platform/system/core/base"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/core/libbacktrace"
            name="aosp/platform/system/core/libbacktrace"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/core/libcutils"
            name="aosp/platform/system/core/libcutils"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/core/liblog"
            name="aosp/platform/system/core/liblog"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/core/libutils"
            name="aosp/platform/system/core/libutils"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/keymaster"
            remote="aosp"
            name="platform/system/keymaster"
@@ -800,7 +800,7 @@
            revision="316ee9015b661aae840f2668943eb697a9269643" />
   <project path="src/aosp/system/libbase"
            name="aosp/platform/system/libbase"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="paygen" />
   <project path="src/aosp/system/libcppbor"
            remote="aosp"
@@ -808,19 +808,19 @@
            revision="84292b6e8f928f5681869e621194fca34fdb8fad" />
   <project path="src/aosp/system/libfmq"
            name="aosp/platform/system/libfmq"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/libhidl"
            name="aosp/platform/system/libhidl"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/libsync"
            name="aosp/platform/system/core/libsync"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/logging"
            name="aosp/platform/system/logging"
-           revision="refs/heads/release-R116-15509.B" />
+           revision="refs/heads/stabilize-15509.37.B" />
   <project path="src/aosp/system/update_engine"
            name="aosp/platform/system/update_engine"
-           revision="refs/heads/release-R116-15509.B"
+           revision="refs/heads/stabilize-15509.37.B"
            groups="paygen" />
 
   <!-- Infra projects. -->
@@ -835,12 +835,12 @@
     <annotation name="branch-mode" value="tot" />
   </project>
   <project path="infra/lucifer"
-           name="chromiumos/infra/lucifer" revision="refs/heads/release-R116-15509.B" />
+           name="chromiumos/infra/lucifer" revision="refs/heads/stabilize-15509.37.B" />
   <project path="infra/proto"
            name="chromiumos/infra/proto" revision="refs/heads/main">
     <annotation name="branch-mode" value="tot" />
   </project>
   <project path="infra_virtualenv"
            name="chromiumos/infra_virtualenv"
-           groups="buildtools,chromeos-admin,labtools,sysmon,devserver" revision="refs/heads/release-R116-15509.B" />
+           groups="buildtools,chromeos-admin,labtools,sysmon,devserver" revision="refs/heads/stabilize-15509.37.B" />
 </manifest>
