@@ -99,10 +99,10 @@
   </project>
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver"/>
   <project name="chromiumos/manifest" path="manifest" revision="de371f68266b63d3b7cdff60587ec2ba2a7fa2d4" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
-  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="84c93fefc80a623ea6946ea175ea73a47a490cc9" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware"/>
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="4533d24035ed89396736823cfdc661e255f71996" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
+  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="89134e8eae1cf3991893f692d0ad22fea09b4c28" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware"/>
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="d6f85c34dce735763e270e03f28c8467ed2fd4de" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="689bf569807b6e978f734f66b1e6498290b7a48f" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
-  <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="89b9e969e147ac889206398709892ee282fb3aa4" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
+  <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="6f74022cba512658117b6ee168ed7b551cbcedaf" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="59027859ce65a4be994192990fed33b73acaa8a7" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/platform/assets" path="src/platform/assets" revision="d8590410975b8aee2e9666331691e24d5762c6b0" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/audiotest" path="src/platform/audiotest" revision="4628a3267a272a384b615550ff577a617897293a" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
@@ -185,8 +185,8 @@
   <project name="chromiumos/platform/vpd" path="src/platform/vpd" revision="0827891b4ea45375ca3d9fd395d3161bbd65144e" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/xolabs-common-core" path="src/platform/xolabs-common-core" revision="e571fa5b1506dc8590c27f1ea941c559275ea1bc" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault,xolabs"/>
   <project name="chromiumos/platform/xorg-conf" path="src/platform/xorg-conf" revision="a9ae9e797b261031e82fbc3fd58a867f1e617929" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
-  <project name="chromiumos/platform2" path="src/platform2" revision="e8a7ea8c4667e4a57c391b93d0093daa599eccc3" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,crosvm,config,partner-config"/>
-  <project name="chromiumos/project" path="src/project_public" revision="97a4261bbe404400e6b3193c2b160b3fd3e583b3" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="partner-config"/>
+  <project name="chromiumos/platform2" path="src/platform2" revision="55c5acb4027f9cf6f6c6320ae0de5ca40fdc057f" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,crosvm,config,partner-config"/>
+  <project name="chromiumos/project" path="src/project_public" revision="d51d016b9ce279c95d8c19e636a18b6832fe60fe" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="partner-config"/>
   <project name="chromiumos/repohooks" path="src/repohooks" revision="8a2fe0c60daedacc5684e356c5237ec3a2273ad5" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,labtools,crosvm"/>
   <project name="chromiumos/third_party/OP-TEE/optee_os" path="src/third_party/optee_os" revision="61f78542ec96b05eead8b8371a6eff261390d35c" upstream="refs/heads/master" dest-branch="refs/heads/master"/>
   <project name="chromiumos/third_party/Wi-FiTestSuite-Linux-DUT" path="src/third_party/Wi-FiTestSuite-Linux-DUT" revision="afe5b18c1b33f03169779851369c8c4ab0bb941d" upstream="refs/heads/master" dest-branch="refs/heads/master"/>
@@ -328,7 +328,7 @@
   <project name="platform/external/marisa-trie" path="src/aosp/external/marisa-trie" remote="aosp" revision="c90fe3d1e4f69b3aebd24764868797e76f12dba4" upstream="refs/heads/master" dest-branch="refs/heads/master">
     <annotation name="branch-mode" value="pin"/>
   </project>
-  <project name="platform/external/perfetto" path="src/aosp/external/perfetto" remote="aosp" revision="19882ab5c25ad4da40e63fe57e003e49d213db9a" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen,notdefault,bazel"/>
+  <project name="platform/external/perfetto" path="src/aosp/external/perfetto" remote="aosp" revision="a827f88107c2752b4fcef987d2c505f5b94ce443" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen,notdefault,bazel"/>
   <project name="platform/external/puffin" path="src/aosp/external/puffin" remote="aosp" revision="db9fb44abec7b54bf79d85febf5ef3c5c40485f0" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen"/>
   <project name="platform/system/keymaster" path="src/aosp/system/keymaster" remote="aosp" revision="49dfc58d6c4c66f5d0b0d06f0161da4e602a1293" upstream="refs/heads/pie-release" dest-branch="refs/heads/pie-release"/>
   <project name="platform/system/keymaster" path="src/aosp/system/keymint" remote="aosp" revision="316ee9015b661aae840f2668943eb697a9269643" upstream="refs/heads/android13-platform-release" dest-branch="refs/heads/android13-platform-release"/>
