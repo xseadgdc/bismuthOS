@@ -77,7 +77,9 @@
 
   <project path="src/bazel"
            name="chromiumos/bazel"
-           groups="minilayout,bazel,fwsdk" />
+           groups="minilayout,bazel,fwsdk">
+    <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
+  </project>
 
   <!-- Platform projects. -->
   <!-- TODO(b/187795634): Drop minilayout,paygen once common-mk/ tooling moves to
