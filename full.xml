@@ -80,6 +80,14 @@
            groups="minilayout,bazel,fwsdk">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
+  <project path="bazel_deps/bazel-central-registry"
+           name="external/github.com/bazelbuild/bazel-central-registry"
+           groups="minilayout,bazel,fwsdk"
+           revision="refs/heads/upstream/main" />
+  <project path="bazel_deps/rules_rust"
+           name="chromiumos/third_party/rules_rust"
+           groups="minilayout,bazel,fwsdk"
+           revision="refs/heads/main" />
 
   <!-- Platform projects. -->
   <!-- TODO(b/187795634): Drop minilayout,paygen once common-mk/ tooling moves to
