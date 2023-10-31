@@ -54,14 +54,14 @@
   <project name="chromiumos/bazel" path="src/bazel" revision="d33d918bfe4604af01d7c30d921304ba8f2f94f2" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE"/>
   </project>
-  <project name="chromiumos/chromite" path="chromite" revision="295b9e4353a4fc97975c06fbd69bf678cc2c66c0" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
+  <project name="chromiumos/chromite" path="chromite" revision="d3b9f3c284c4421688e1add108beeda2bd3d2bde" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
     <copyfile src="AUTHORS" dest="AUTHORS"/>
     <copyfile src="LICENSE" dest="LICENSE"/>
   </project>
   <project name="chromiumos/chromite" path="infra/chromite-HEAD" revision="dad82a4956f55f055b130f046355e1dac665a508" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,paygen">
     <annotation name="branch-mode" value="tot"/>
   </project>
-  <project name="chromiumos/config" path="src/config" revision="2acfcbb1f453d92515d4b2ae3fc0ed5878b3da68" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="paygen,config,partner-config"/>
+  <project name="chromiumos/config" path="src/config" revision="96aa1ea778895573b43521d6b0e69cc65d085a2b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="paygen,config,partner-config"/>
   <project name="chromiumos/containers/cros-container-guest-tools" path="src/platform/container-guest-tools" revision="a4cd4665ac1a33499f797ef4f13c6be4351df954" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/docs" path="docs" revision="be6c715d104c382208e3c74562497bdcade1a02c" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="crosvm">
     <annotation name="branch-mode" value="pin"/>
@@ -90,10 +90,10 @@
   <project name="chromiumos/infra/proto" path="infra/proto" revision="be0c4e39c6f17c73041233efccdb95438696e236" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="tot"/>
   </project>
-  <project name="chromiumos/infra/recipes" path="infra/recipes" revision="cba0e9f092b4bea4638ce6b8aed0539826f7dab3" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="chromeos-admin">
+  <project name="chromiumos/infra/recipes" path="infra/recipes" revision="c58babb007cae413efde306274d7646cb69a9153" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="chromeos-admin">
     <annotation name="branch-mode" value="drop"/>
   </project>
-  <project name="chromiumos/infra/suite_scheduler" path="infra/suite_scheduler" revision="624ee67b87b06c39e9e785a9abee8711597e7ffb" upstream="refs/heads/main" dest-branch="refs/heads/main">
+  <project name="chromiumos/infra/suite_scheduler" path="infra/suite_scheduler" revision="19e1ce1c522beafd4e1a7f71efb2b2e0877878db" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="drop"/>
   </project>
   <project name="chromiumos/infra/test-scheduling" path="infra/test-scheduling" revision="44696af78e7fed7d53757f05222b7b41edd99fa6" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault">
@@ -102,7 +102,7 @@
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver"/>
   <project name="chromiumos/manifest" path="manifest" revision="d3c7a8811f593ed5226dc37d577ff111300bd3d3" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="fa49527b3b12178e158977c96e20b9d224cb64e9" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware"/>
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="d80a2ddde8bab26eb9b15c756e5c4a2fa7d9066c" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="5b0b4662bf2c74a61ea2393cdf87041a8555c572" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="0ca65aa5c5c79acc633ff1a4e65306e931b4fdac" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="1e8b10ed41cd21d5573570df3b9b43a8601fdcc5" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="98469e7523adff297b094194dd62d482a350b10b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
@@ -174,7 +174,7 @@
   <project name="chromiumos/platform/satlab" path="src/platform/satlab" revision="52950ae6d4823d8cb5121f0337634e45faba67a4" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault,satlab"/>
   <project name="chromiumos/platform/spdm" path="src/platform/spdm" revision="2f1cf74817c1c496859f874967681c9edcfd4f2b" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/tast" path="src/platform/tast" revision="d3b774b64f9e87273cb2b19c2690a68ae717a450" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen"/>
-  <project name="chromiumos/platform/tast-tests" path="src/platform/tast-tests" revision="f56671b15d1ea4ad6dd804781970ca86f23ad8f6" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen"/>
+  <project name="chromiumos/platform/tast-tests" path="src/platform/tast-tests" revision="90196c7ca33fc20a81abd3231eccc9e70ebcaab9" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen"/>
   <project name="chromiumos/platform/tauto" path="src/platform/tauto" revision="92d90dcc2c288822ea930d5311e0fb412882f2c5" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/touch_firmware_test" path="src/platform/touch_firmware_test" revision="b8b2c09a7965e530eeeba1e7adac51ef542264ee" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware"/>
   <project name="chromiumos/platform/touch_updater" path="src/platform/touch_updater" revision="37257ef26c73cd14d8f3b951e966950cf87e746d" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
