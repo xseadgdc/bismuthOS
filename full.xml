@@ -75,19 +75,19 @@
     <annotation name="branch-mode" value="drop" />
   </project>
 
+  <project path="bazel_deps/bazel-central-registry"
+           name="external/github.com/bazelbuild/bazel-central-registry"
+           revision="refs/heads/upstream/main"
+           groups="minilayout,bazel,fwsdk" />
+  <project path="bazel_deps/rules_rust"
+           name="chromiumos/third_party/rules_rust"
+           revision="refs/heads/main"
+           groups="minilayout,bazel,fwsdk" />
   <project path="src/bazel"
            name="chromiumos/bazel"
            groups="minilayout,bazel,fwsdk">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
-  <project path="bazel_deps/bazel-central-registry"
-           name="external/github.com/bazelbuild/bazel-central-registry"
-           groups="minilayout,bazel,fwsdk"
-           revision="refs/heads/upstream/main" />
-  <project path="bazel_deps/rules_rust"
-           name="chromiumos/third_party/rules_rust"
-           groups="minilayout,bazel,fwsdk"
-           revision="refs/heads/main" />
 
   <!-- Platform projects. -->
   <!-- TODO(b/187795634): Drop minilayout,paygen once common-mk/ tooling moves to
@@ -125,11 +125,11 @@
            groups="paygen,firmware" />
   <project path="src/platform/crdyboot"
            name="chromiumos/platform/crdyboot" />
+  <project path="src/platform/crospts"
+           name="chromiumos/platform/crospts" />
   <project path="src/platform/crostestutils"
            name="chromiumos/platform/crostestutils"
            groups="minilayout,paygen,firmware,buildtools" />
-  <project path="src/platform/crospts"
-           name="chromiumos/platform/crospts" />
   <project path="src/platform/crosvm"
            name="chromiumos/platform/crosvm"
            revision="refs/heads/chromeos"
