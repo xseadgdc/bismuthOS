@@ -27,10 +27,6 @@
            name="chromiumos/third_party/pyelftools"
            revision="refs/heads/chromeos-0.22"
            groups="minilayout,paygen,firmware,buildtools" />
-  <project path="src/third_party/pyelftools"
-           name="chromiumos/third_party/pyelftools"
-           revision="refs/heads/chromeos-0.22"
-           groups="minilayout,paygen,firmware,buildtools" />
   <project path="docs"
            name="chromiumos/docs"
            groups="crosvm">
@@ -75,6 +71,10 @@
   <project path="src/scripts"
            name="chromiumos/platform/crosutils"
            groups="minilayout,paygen,firmware,buildtools,labtools" />
+  <project path="src/third_party/pyelftools"
+           name="chromiumos/third_party/pyelftools"
+           revision="refs/heads/chromeos-0.22"
+           groups="minilayout,paygen,firmware,buildtools" />
   <project path="website"
            name="website">
     <annotation name="branch-mode" value="drop" />
@@ -86,7 +86,6 @@
            groups="minilayout,bazel,fwsdk" />
   <project path="bazel_deps/rules_rust"
            name="chromiumos/third_party/rules_rust"
-           revision="refs/heads/main"
            groups="minilayout,bazel,fwsdk" />
   <project path="src/bazel"
            name="chromiumos/bazel"
@@ -908,6 +907,10 @@
            name="chromiumos/infra/go"
            groups="chromeos-admin">
     <annotation name="branch-mode" value="tot" />
+  </project>
+  <project path="infra/ide"
+           name="chromiumos/infra/ide">
+    <annotation name="branch-mode" value="drop" />
   </project>
   <project path="infra/lucifer"
            name="chromiumos/infra/lucifer" />
