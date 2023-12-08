@@ -55,7 +55,7 @@
   <project name="chromiumos/bazel" path="src/bazel" revision="645ef203cf26a767ce799a23d098d464dae719d0" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE"/>
   </project>
-  <project name="chromiumos/chromite" path="chromite" revision="0cf61d8653d2c8eb7d0691db700ad4c5ea4c1491" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
+  <project name="chromiumos/chromite" path="chromite" revision="30c3f4bc0cf59b814020e233ee0f0f5797b9f9f9" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
     <copyfile src="AUTHORS" dest="AUTHORS"/>
     <copyfile src="LICENSE" dest="LICENSE"/>
   </project>
@@ -103,13 +103,13 @@
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver"/>
   <project name="chromiumos/manifest" path="manifest" revision="940aac6079fe59188937f33261c3da6696f3645f" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="a786456299c5e828ff4dbd57651c3cd2ae4dd90a" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware"/>
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="cf3be90cdfd0ee0420507a899e95f8cd4574a2a6" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="49d418ed28cbdb285b09834f17d98544277597ad" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true"/>
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="387df8ce026638dab18462ab1f98652fd8fbcf40" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="34c4ead5f73146a10cdbac3e79ad5c0d24f10cc5" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="dc5c82b6e42f4d18f2ae22ce1f75f0a8cdb94038" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools"/>
   <project name="chromiumos/platform/assets" path="src/platform/assets" revision="5fe0fa356abb2abf7ea13f2ebbd72af0ebb75cc4" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/audiotest" path="src/platform/audiotest" revision="4fd673a7501c370e6fc33d1a2e9af3557236822f" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
-  <project name="chromiumos/platform/bisect-kit" path="src/platform/bisect-kit" revision="5c8d32f1a575f4220bd7c0121c2a83a852bfc4e7" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
+  <project name="chromiumos/platform/bisect-kit" path="src/platform/bisect-kit" revision="67310f2585d3054b8cccda3e5834e4cd9e0415ff" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/bluetooth" path="src/platform/bluetooth" revision="541b83e0a0dd2896d375f6852caf29614cde9acd" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/bmpblk" path="src/platform/bmpblk" revision="39cdf857e7283a9eedd94a407f274b55408d889f" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
   <project name="chromiumos/platform/btsocket" path="src/platform/btsocket" revision="d52a38ffface8988da342133161c8a6b462437a0" upstream="refs/heads/main" dest-branch="refs/heads/main"/>
@@ -346,7 +346,7 @@
   <project name="platform/external/marisa-trie" path="src/aosp/external/marisa-trie" remote="aosp" revision="c90fe3d1e4f69b3aebd24764868797e76f12dba4" upstream="refs/heads/master" dest-branch="refs/heads/master">
     <annotation name="branch-mode" value="pin"/>
   </project>
-  <project name="platform/external/perfetto" path="src/aosp/external/perfetto" remote="aosp" revision="b20762ff887945dc4a02ca355ef6c3ee4f0c92a7" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen,notdefault,bazel"/>
+  <project name="platform/external/perfetto" path="src/aosp/external/perfetto" remote="aosp" revision="594f22e0cfb4d997483a0dbc7d3ff4c38ec8b077" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen,notdefault,bazel"/>
   <project name="platform/external/puffin" path="src/aosp/external/puffin" remote="aosp" revision="f513f590877406874e5cee89c7202ac2213d9faa" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen"/>
   <project name="platform/system/keymaster" path="src/aosp/system/keymaster" remote="aosp" revision="49dfc58d6c4c66f5d0b0d06f0161da4e602a1293" upstream="refs/heads/pie-release" dest-branch="refs/heads/pie-release"/>
   <project name="platform/system/keymaster" path="src/aosp/system/keymint" remote="aosp" revision="316ee9015b661aae840f2668943eb697a9269643" upstream="refs/heads/android13-platform-release" dest-branch="refs/heads/android13-platform-release"/>
