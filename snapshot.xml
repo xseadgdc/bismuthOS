@@ -52,7 +52,7 @@
   <project name="chromiumos/bazel" path="src/bazel" revision="67e822317ff3c2f9b7da64f1c69dd2074eda1b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
-  <project name="chromiumos/chromite" path="chromite" revision="707c6ebd75a6fda858e465bf64df5b924512d466" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
+  <project name="chromiumos/chromite" path="chromite" revision="9351b715f9bae67301df9ffe6a5d9a6b30155812" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
@@ -98,9 +98,9 @@
     <annotation name="branch-mode" value="drop" />
   </project>
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver" />
-  <project name="chromiumos/manifest" path="manifest" revision="9cd6d512999c86125d17047d977374e2eb2563e3" upstream="refs/heads/main" dest-branch="refs/heads/main" />
+  <project name="chromiumos/manifest" path="manifest" revision="924a3f571fbe71bb5bbfa0afe9ef71d2e7093751" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="0e15564508cd112010adbab6d50c08dde842a0a2" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="2dcd54a2b834e4d3168fe63d0b90f9bbf3f0353c" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="2a8d4088b4e314102b460ee23d6ce17d4d9c4836" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="0debd9f17e33f7c26e9fae47a8ac64855da5b4bb" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="06e4cc566135c2a712229645248fe02b2eed9638" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="d1698655626ffdd6d4f96a7b1ccdae25997b35d0" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
@@ -153,6 +153,7 @@
   <project name="chromiumos/platform/glbench" path="src/platform/glbench" revision="86f43e392710c8afc2725e52ef6d5ffdd0c4a54a" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/glbench" path="src/platform/glbench-debian" revision="bc4b2c91f8d51ec636dc5f8c6feeec607412b30a" upstream="refs/heads/debian" dest-branch="refs/heads/debian" groups="notdefault,crostini" />
   <project name="chromiumos/platform/graphics" path="src/platform/graphics" revision="f01969fd9e655214c9ad142f3516ac59e3cf82db" upstream="refs/heads/main" dest-branch="refs/heads/main" />
+  <project name="chromiumos/platform/hdctools_firmware" path="src/platform/hdctools_firmware" revision="70791c60a9a1ea2e0c22b2e71d4a36d4f9f8fd12" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/hps-firmware" path="src/platform/hps-firmware2" revision="95eedb028ac43a045e0c77388a425c2c5f65c53d" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/hps-firmware-images" path="src/platform/hps-firmware-images" revision="7da2ddb1a418232fa0711ed09725ffb1bf56953c" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/human_motion_robot" path="src/platform/human_motion_robot" revision="b65fd9a54e9f42b4abe2ed31051896272dba0aa5" upstream="refs/heads/main" dest-branch="refs/heads/main" />
@@ -175,7 +176,7 @@
   <project name="chromiumos/platform/satlab" path="src/platform/satlab" revision="3d238d6f246a877c7b7cb27c0a84ee84c15593cd" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault,satlab" />
   <project name="chromiumos/platform/spdm" path="src/platform/spdm" revision="90a428db8663e5171054bebe8a42aa1938a97d6d" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/tast" path="src/platform/tast" revision="5ad6893abb90f1d3a250d3ba45831cd86c84f157" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen" />
-  <project name="chromiumos/platform/tast-tests" path="src/platform/tast-tests" revision="68e9231f08edfbd47d97dfa92b2a3ff4b08f139d" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen" />
+  <project name="chromiumos/platform/tast-tests" path="src/platform/tast-tests" revision="5d29df03a9102292a89ddeed4950a0d6c92df048" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen" />
   <project name="chromiumos/platform/tauto" path="src/platform/tauto" revision="92d90dcc2c288822ea930d5311e0fb412882f2c5" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/touch_firmware_test" path="src/platform/touch_firmware_test" revision="b8b2c09a7965e530eeeba1e7adac51ef542264ee" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware" />
   <project name="chromiumos/platform/touch_updater" path="src/platform/touch_updater" revision="5006f27663646679e3567c9d3a1abfcf25be710b" upstream="refs/heads/main" dest-branch="refs/heads/main" />
