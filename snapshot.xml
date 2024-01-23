@@ -52,7 +52,7 @@
   <project name="chromiumos/bazel" path="src/bazel" revision="165caf0a481e26e0a0dd376aeefff0585162e15f" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
-  <project name="chromiumos/chromite" path="chromite" revision="d86ec4a67afdc3c6a1a5fb78b27da02cbff4ce8c" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
+  <project name="chromiumos/chromite" path="chromite" revision="12b5cd455cc6dd97009a101cb0fe61c7693ebbe6" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
@@ -100,7 +100,7 @@
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver" />
   <project name="chromiumos/manifest" path="manifest" revision="365cdf35a46d0678db5fd2addb0c02299b88962e" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="9c9ce48c5b02cd30fc8af7282948df16fdc40c7e" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="e0ca971684bc8b85066ce80b92c63c9079facba9" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="deaa49df42c517834ac48e810880b8465c770c8e" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="3d6218e5ef791aea95f2844db7059a89f31ae905" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="1106cee07b2720d6504cb715cf4f2890672cac7c" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="c52f0082a0bd8703e9cc6dbd711b69349929d9e5" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
@@ -201,7 +201,7 @@
   <project name="chromiumos/third_party/apitrace" path="src/third_party/apitrace-debian" revision="989c29adcfdbc48ee95fe41475bc667a5c77292e" upstream="refs/heads/debian" dest-branch="refs/heads/debian" groups="notdefault,crostini" />
   <project name="chromiumos/third_party/arm-trusted-firmware" path="src/third_party/arm-trusted-firmware" revision="02091541d70e6438c04d6f7b5b323c62f792ab43" upstream="refs/heads/master" dest-branch="refs/heads/master" />
   <project name="chromiumos/third_party/atrusctl" path="src/third_party/atrusctl" revision="1f576eac08b5693eb82390f1a4382057abe6e0cf" upstream="refs/heads/master" dest-branch="refs/heads/master" />
-  <project name="chromiumos/third_party/autotest" path="src/third_party/autotest/files" revision="8daf238ffb9a3a278dc7d6c3c80c874f7c3d264b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,labtools,devserver" />
+  <project name="chromiumos/third_party/autotest" path="src/third_party/autotest/files" revision="e0eb6fa889592f935706c5b6a5fa6d3094cab506" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,labtools,devserver" />
   <project name="chromiumos/third_party/aver-updater" path="src/third_party/aver-updater" revision="1197f4dcbee3eb2892c507c5b4ba698dbd70c6f1" upstream="refs/heads/master" dest-branch="refs/heads/master" />
   <project name="chromiumos/third_party/bluez" path="src/third_party/bluez/current" revision="196855c3033381791d87492b42964ba5e0072ba2" upstream="refs/heads/chromeos-5.54" dest-branch="refs/heads/chromeos-5.54" />
   <project name="chromiumos/third_party/bluez" path="src/third_party/bluez/next" revision="196855c3033381791d87492b42964ba5e0072ba2" upstream="refs/heads/chromeos-5.54" dest-branch="refs/heads/chromeos-5.54" />
@@ -342,7 +342,7 @@
   <project name="platform/external/marisa-trie" path="src/aosp/external/marisa-trie" remote="aosp" revision="c90fe3d1e4f69b3aebd24764868797e76f12dba4" upstream="refs/heads/master" dest-branch="refs/heads/master">
     <annotation name="branch-mode" value="pin" />
   </project>
-  <project name="platform/external/perfetto" path="src/aosp/external/perfetto" remote="aosp" revision="861825a1f435a59fd495e2835a6454bbf71ee804" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen,notdefault,bazel" />
+  <project name="platform/external/perfetto" path="src/aosp/external/perfetto" remote="aosp" revision="ba0147c1836a05680da83d373c3967740a8cc20c" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen,notdefault,bazel" />
   <project name="platform/external/puffin" path="src/aosp/external/puffin" remote="aosp" revision="5e442dffe7c272c2f3e1cf87ff0318babd300983" upstream="refs/heads/master" dest-branch="refs/heads/master" groups="paygen" />
   <project name="platform/system/keymaster" path="src/aosp/system/keymaster" remote="aosp" revision="49dfc58d6c4c66f5d0b0d06f0161da4e602a1293" upstream="refs/heads/pie-release" dest-branch="refs/heads/pie-release" />
   <project name="platform/system/keymaster" path="src/aosp/system/keymint" remote="aosp" revision="316ee9015b661aae840f2668943eb697a9269643" upstream="refs/heads/android13-platform-release" dest-branch="refs/heads/android13-platform-release" />
