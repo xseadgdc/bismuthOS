@@ -24,6 +24,7 @@ See https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
+  <!-- TODO(b/321321226): We will symlink the old chromite/infra/proto location when removing. -->
   <project path="chromite/infra/proto"
            name="chromiumos/infra/proto" />
   <project path="docs"
@@ -43,6 +44,8 @@ See https://chromium.googlesource.com/chromiumos/docs/+/HEAD/developer_guide.md#
            name="infra/cop">
     <annotation name="branch-mode" value="drop" />
   </project>
+  <project path="infra/proto_branched"
+           name="chromiumos/infra/proto" />
   <project path="manifest"
            name="chromiumos/manifest" />
   <project path="src/config"
