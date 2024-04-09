@@ -52,7 +52,7 @@
   <project name="chromiumos/bazel" path="src/bazel" revision="aee6c506a9e84107ff89c99e22b0cfd6fa2338fb" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
-  <project name="chromiumos/chromite" path="chromite" revision="7c77836dd96934abe0a6c8914ce7b9abe95ca804" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
+  <project name="chromiumos/chromite" path="chromite" revision="b5bb9d6a8f294ef90d1304336c2b5784f842a802" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
@@ -77,7 +77,7 @@
   <project name="chromiumos/infra/go" path="infra/go" revision="65d85279ec977d0df258d589476539da9f71c164" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="chromeos-admin">
     <annotation name="branch-mode" value="tot" />
   </project>
-  <project name="chromiumos/infra/ide" path="infra/ide" revision="5a6df6c78db380f75474a56a479985849cabcd86" upstream="refs/heads/main" dest-branch="refs/heads/main">
+  <project name="chromiumos/infra/ide" path="infra/ide" revision="93bc68a5ac3b4f86c5ebb8d1b24acde433c02911" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="drop" />
   </project>
   <project name="chromiumos/infra/lucifer" path="infra/lucifer" revision="12e9e6bde527c0bf97ff68c1d5f70385e15d1e58" upstream="refs/heads/main" dest-branch="refs/heads/main" />
@@ -96,14 +96,14 @@
   </project>
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="39254f97db8d6ab8b3fdef3d2f7038ac42978b78" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver" />
   <project name="chromiumos/manifest" path="manifest" revision="d7f906483e01031a470c198a6140b54babcc5c0d" upstream="refs/heads/main" dest-branch="refs/heads/main" />
-  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="9fdbd9baed3cbde3183de7917a4c6b26f40ea5d2" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="105fee3a3ae431edc369ade0fd885547af9bc533" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
+  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="22eb450271b9aec7124ebc86e5773f85e4a790e3" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="794fe67e62839bfa31e93e8ee680107033f48f3e" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="66f4c2de98d1af0e24f99092db3937d13dc80469" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="ab50effb104414e10e39043d8c9956d29642099f" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="5e2e34450dc4e15b54a2e9889a4f228593cedeb4" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/platform/assets" path="src/platform/assets" revision="a3a0fb75a8cd4178a2917574ef6371b427f9818a" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/audiotest" path="src/platform/audiotest" revision="addf6b2d6be58c947733c032d5c9438dca5b99df" upstream="refs/heads/main" dest-branch="refs/heads/main" />
-  <project name="chromiumos/platform/bisect-kit" path="src/platform/bisect-kit" revision="3cc63b7517fac960bdfa8878acb5aa5ac05aab07" upstream="refs/heads/main" dest-branch="refs/heads/main" />
+  <project name="chromiumos/platform/bisect-kit" path="src/platform/bisect-kit" revision="9a7b739fad756a36a2e2d847013218f0078ac9b5" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/bluetooth" path="src/platform/bluetooth" revision="8864b1d737e63fbf1c100ea2fff5613067b594c3" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/bmpblk" path="src/platform/bmpblk" revision="e613cb9962705a166e29a5c03c2a764c03398547" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/btpeerd" path="src/platform/btpeerd" revision="5fb15ae4cfb95e22dd43eb70fb5933f3bd16c754" upstream="refs/heads/main" dest-branch="refs/heads/main" />
@@ -188,7 +188,7 @@
   <project name="chromiumos/repohooks" path="src/repohooks" revision="95bb759a41a94230daeeb0ba36ce86aa49a746d7" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,labtools,crosvm,fwsdk" />
   <project name="chromiumos/third_party/OP-TEE/optee_os" path="src/third_party/optee_os" revision="9dd2bc81136c68f8312a9e8a6d85bf90c7b2d323" upstream="refs/heads/master" dest-branch="refs/heads/master" />
   <project name="chromiumos/third_party/Wi-FiTestSuite-Linux-DUT" path="src/third_party/Wi-FiTestSuite-Linux-DUT" revision="589a349061aa29cc1eed217c0659bfe25c5acc80" upstream="refs/heads/master" dest-branch="refs/heads/master" />
-  <project name="chromiumos/third_party/adhd" path="src/third_party/adhd" revision="f4f80ee32511dced9fd202ac98ea4f4a653b1ff1" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="crosvm" />
+  <project name="chromiumos/third_party/adhd" path="src/third_party/adhd" revision="2775e34c3937cf7d9ea0055cf50c81d39ef00db3" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="crosvm" />
   <project name="chromiumos/third_party/ap_wpsr" path="src/third_party/ap_wpsr" revision="6ed965527b5baf37d90a821221698775918d23b0" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware" />
   <project name="chromiumos/third_party/apitrace" path="src/third_party/apitrace" revision="1090464595110ae95d329f2f7b6220443052c215" upstream="refs/heads/master" dest-branch="refs/heads/master" />
   <project name="chromiumos/third_party/apitrace" path="src/third_party/apitrace-debian" revision="989c29adcfdbc48ee95fe41475bc667a5c77292e" upstream="refs/heads/debian" dest-branch="refs/heads/debian" groups="notdefault,crostini" />
