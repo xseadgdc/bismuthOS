@@ -73,14 +73,14 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="external/github.com/bazelbuild/bazel-central-registry"
            revision="refs/heads/upstream/main"
            groups="minilayout,bazel,fwsdk,firmware" />
+  <project path="bazel_deps/rules_cc"
+           name="chromiumos/third_party/rules_cc"
+           groups="minilayout,bazel,fwsdk,firmware" />
   <project path="bazel_deps/rules_pkg"
            name="chromiumos/third_party/rules_pkg"
            groups="minilayout,bazel,fwsdk,firmware" />
   <project path="bazel_deps/rules_rust"
            name="chromiumos/third_party/rules_rust"
-           groups="minilayout,bazel,fwsdk,firmware" />
-  <project path="bazel_deps/rules_cc"
-           name="chromiumos/third_party/rules_cc"
            groups="minilayout,bazel,fwsdk,firmware" />
   <project path="src/bazel"
            name="chromiumos/bazel"
@@ -226,7 +226,19 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="firmware">
     <annotation name="branch-mode" value="pin" />
   </project>
+  <project path="src/platform/release-firmware/fpmcu-bloonchipper/ec"
+           name="chromiumos/platform/ec"
+           revision="refs/heads/firmware-fpmcu-bloonchipper-release"
+           groups="firmware">
+    <annotation name="branch-mode" value="pin" />
+  </project>
   <project path="src/platform/release-firmware/fpmcu-dartmonkey"
+           name="chromiumos/platform/ec"
+           revision="refs/heads/firmware-fpmcu-dartmonkey-release"
+           groups="firmware">
+    <annotation name="branch-mode" value="pin" />
+  </project>
+  <project path="src/platform/release-firmware/fpmcu-dartmonkey/ec"
            name="chromiumos/platform/ec"
            revision="refs/heads/firmware-fpmcu-dartmonkey-release"
            groups="firmware">
@@ -238,7 +250,19 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="firmware">
     <annotation name="branch-mode" value="pin" />
   </project>
+  <project path="src/platform/release-firmware/fpmcu-helipilot/ec"
+           name="chromiumos/platform/ec"
+           revision="refs/heads/firmware-fpmcu-helipilot-release"
+           groups="firmware">
+    <annotation name="branch-mode" value="pin" />
+  </project>
   <project path="src/platform/release-firmware/zephyr-bloonchipper"
+           name="chromiumos/third_party/zephyr"
+           revision="refs/heads/firmware-fpmcu-bloonchipper-release"
+           groups="firmware,zephyr">
+    <annotation name="branch-mode" value="pin" />
+  </project>
+  <project path="src/platform/release-firmware/zephyr-bloonchipper/ec"
            name="chromiumos/third_party/zephyr"
            revision="refs/heads/firmware-fpmcu-bloonchipper-release"
            groups="firmware,zephyr">
@@ -764,6 +788,11 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="chromium/src/tools/md_browser" />
 
   <!-- Android repositories. -->
+  <project path="src/aosp/build"
+           remote="aosp"
+           name="platform/build"
+           revision="ddfd2f48895512149d43e35b79368c54cef16081"
+           groups="notdefault,bluetooth,bazel" />
   <project path="src/aosp/external/bsdiff"
            remote="aosp"
            name="platform/external/bsdiff"
@@ -805,11 +834,6 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="notdefault,bluetooth,bazel">
     <annotation name="branch-mode" value="pin" />
   </project>
-  <project path="src/aosp/build"
-           remote="aosp"
-           name="platform/build"
-           revision="ddfd2f48895512149d43e35b79368c54cef16081"
-           groups="notdefault,bluetooth,bazel" />
   <project path="src/aosp/hardware/interfaces/neuralnetworks"
            name="aosp/platform/hardware/interfaces/neuralnetworks"
            revision="refs/heads/master" />
