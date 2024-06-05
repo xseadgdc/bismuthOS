@@ -49,7 +49,7 @@
   <project name="chromium/src/third_party/tlslite" path="src/chromium/src/third_party/tlslite" remote="chromium" revision="05d9f22315757117685ad2f5265148f900f18034" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromium/src/tools/md_browser" path="src/chromium/src/tools/md_browser" remote="chromium" revision="6cc8e58a83412dc31de6fb7614fadb0b51748d4b" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromium/tools/depot_tools" path="src/chromium/depot_tools" remote="chromium" revision="840e538154a92136133a68b33a050e99266f40fd" groups="minilayout,paygen,firmware,buildtools,labtools" />
-  <project name="chromiumos/bazel" path="src/bazel" revision="1467ebbfd6fcbb81204ee3ffdbaea3d7f9ae5e1f" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware">
+  <project name="chromiumos/bazel" path="src/bazel" revision="233cc9b93843d2096fe5227a9cae239b30965dbc" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
   <project name="chromiumos/chromite" path="chromite" revision="7237c19fd560574b650d209f24766b0dfe6b041a" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
@@ -95,8 +95,8 @@
   </project>
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="649440ce2ab9f7f7c640344c083825eebdc934ee" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver" />
   <project name="chromiumos/manifest" path="manifest" revision="35fcd4c2d7977d738cdd0d3eb612a72fbf923f62" upstream="refs/heads/main" dest-branch="refs/heads/main" />
-  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="c19be44ad18367440fc23f6816e1d386fd5af3ce" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="f126fbbeafc73845eca7106ea404c3ae80443ebd" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
+  <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="b14f4a24c8c47a10b2a036b20d4f63e969b3704e" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="90e727d202b6ad4c4e166bbc28ea6db38158adbf" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" sync-c="true" />
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="38fcea9563e7434d297a8f2fa16d375233a40452" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="d533531741296dfd436d22810e7f19923f0e6b27" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="fdf39c46f578483c580d0a3faaa52a8988626cf8" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
@@ -123,7 +123,7 @@
   <project name="chromiumos/platform/dolos" path="src/platform/dolos" revision="2ec93d4213b3f09d19a7460b3e995577e5a1f797" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/drm-tests" path="src/platform/drm-tests" revision="303f9ce4fdf1489d159dce18cd762efc9fee6ccb" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/ec" path="src/platform/cr50" revision="c347a676a2c73ef1d966cc417f23d263bbb9635f" upstream="refs/heads/cr50_stab" dest-branch="refs/heads/cr50_stab" groups="paygen,firmware" />
-  <project name="chromiumos/platform/ec" path="src/platform/ec" revision="0765d0e51f2b698353c34ef64253bc53d5c90403" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="paygen,firmware,fwsdk" />
+  <project name="chromiumos/platform/ec" path="src/platform/ec" revision="710a1b8e974fc37b0972ef35973ac763e6450594" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="paygen,firmware,fwsdk" />
   <project name="chromiumos/platform/ec" path="src/platform/gsc-utils" revision="1c9b0cac4301ab02c59aef9d8da314ae7971f1f3" upstream="refs/heads/gsc_utils" dest-branch="refs/heads/gsc_utils" />
   <project name="chromiumos/platform/ec" path="src/platform/ish" revision="dceabef37914104929e3fcb35c8d51a82869f57a" upstream="refs/heads/ish" dest-branch="refs/heads/ish" groups="firmware" />
   <project name="chromiumos/platform/ec" path="src/platform/release-firmware/fpmcu-bloonchipper" revision="aa15589c9d3d3b07d4d9cce48523b6ee11e5ea0d" upstream="refs/heads/firmware-fpmcu-bloonchipper-release" dest-branch="refs/heads/firmware-fpmcu-bloonchipper-release" groups="firmware">
@@ -356,7 +356,7 @@
   <project name="platform/system/keymaster" path="src/aosp/system/keymint" remote="aosp" revision="316ee9015b661aae840f2668943eb697a9269643" upstream="refs/heads/android13-platform-release" dest-branch="refs/heads/android13-platform-release" />
   <project name="platform/system/libcppbor" path="src/aosp/system/libcppbor" remote="aosp" revision="6303c829c36e63fcaca727fa5b6bea052b61af25" upstream="refs/heads/master" dest-branch="refs/heads/master" />
   <project name="platform/system/tools/sysprop" path="src/aosp/system/tools/sysprop" remote="aosp" revision="548a052df34d552a86a50b26dcd63855b5fc73c2" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="bluetooth" />
-  <project name="website" revision="4b04d8faaf6e4b60c409261390f4e0567ba73f17" upstream="refs/heads/main" dest-branch="refs/heads/main">
+  <project name="website" revision="755f629eee348c16aefa00fba6d2da318564d71e" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="drop" />
   </project>
   
