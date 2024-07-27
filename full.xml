@@ -15,12 +15,12 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
   <!-- Common projects for developing CrOS. -->
   <project path="src/repohooks"
            name="chromiumos/repohooks"
-           groups="minilayout,paygen,firmware,buildtools,labtools,crosvm,fwsdk" />
+           groups="minilayout,paygen,firmware,buildtools,labtools,crosvm,fwsdk,ti50" />
   <repo-hooks in-project="chromiumos/repohooks"
               enabled-list="pre-upload" />
   <project path="chromite"
            name="chromiumos/chromite"
-           groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk">
+           groups="minilayout,paygen,firmware,buildtools,chromeos-admin,labtools,sysmon,devserver,crosvm,fwsdk,ti50">
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
@@ -72,19 +72,19 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
   <project path="bazel_deps/bazel-central-registry"
            name="external/github.com/bazelbuild/bazel-central-registry"
            revision="refs/heads/upstream/main"
-           groups="minilayout,bazel,fwsdk,firmware" />
+           groups="minilayout,bazel,fwsdk,firmware,ti50" />
   <project path="bazel_deps/rules_cc"
            name="chromiumos/third_party/rules_cc"
-           groups="minilayout,bazel,fwsdk,firmware" />
+           groups="minilayout,bazel,fwsdk,firmware,ti50" />
   <project path="bazel_deps/rules_pkg"
            name="chromiumos/third_party/rules_pkg"
-           groups="minilayout,bazel,fwsdk,firmware" />
+           groups="minilayout,bazel,fwsdk,firmware,ti50" />
   <project path="bazel_deps/rules_rust"
            name="chromiumos/third_party/rules_rust"
-           groups="minilayout,bazel,fwsdk,firmware" />
+           groups="minilayout,bazel,fwsdk,firmware,ti50" />
   <project path="src/bazel"
            name="chromiumos/bazel"
-           groups="minilayout,bazel,fwsdk,firmware">
+           groups="minilayout,bazel,fwsdk,firmware,ti50">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
 
@@ -177,7 +177,8 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="chromiumos/graphyte" />
   <project path="src/platform/gsc-utils"
            name="chromiumos/platform/ec"
-           revision="refs/heads/gsc_utils" />
+           revision="refs/heads/gsc_utils"
+           groups="ti50" />
   <project path="src/platform/hdctools_firmware"
            name="chromiumos/platform/hdctools_firmware" />
   <project path="src/platform/hps-firmware2"
@@ -221,7 +222,7 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="chromiumos/platform/mttools" />
   <project path="src/platform/pinweaver"
            name="chromiumos/platform/pinweaver"
-           groups="fwsdk" />
+           groups="fwsdk,ti50" />
   <project path="src/platform/redaction_tool"
            name="chromiumos/platform/redaction_tool" />
   <!-- EC-based release firmware.
@@ -258,7 +259,7 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="paygen,buildtools,labtools,devserver,firmware" />
   <project path="src/platform/rules_cros_firmware"
            name="chromiumos/platform/rules_cros_firmware"
-           groups="fwsdk" />
+           groups="fwsdk,ti50" />
   <project path="src/platform/satlab"
            name="chromiumos/platform/satlab"
            groups="notdefault,satlab" />
