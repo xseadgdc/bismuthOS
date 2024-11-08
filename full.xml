@@ -24,7 +24,22 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
     <copyfile src="AUTHORS" dest="AUTHORS" />
     <copyfile src="LICENSE" dest="LICENSE" />
   </project>
-  <project path="infra/proto_branched"
+  <project path="infra/build/observability-cloud"
+	   name="chromiumos/infra/build/observability-cloud"
+	  revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
+  <project path="infra/build/prebuilts-cloud"
+	   name="chromiumos/infra/build/prebuilts-cloud"
+	  revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
+  <project path="infra/cop"
+	   name="infra/cop"
+	   revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
+ <project path="infra/proto_branched"
            name="chromiumos/infra/proto" revision="refs/heads/firmware-android-15949.B" />
   <project path="manifest"
            name="chromiumos/manifest" revision="refs/heads/firmware-android-15949.B" />
@@ -52,6 +67,11 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="chromiumos/third_party/pyelftools"
            revision="refs/heads/firmware-android-15949.B"
            groups="minilayout,paygen,firmware,buildtools" />
+  <project path="website"
+	   name="website"
+	   revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
   <project path="bazel_deps/bazel-central-registry"
            name="external/github.com/bazelbuild/bazel-central-registry"
            revision="96fef0f6f7ad13b27d0bb01a55f02fb168061322"
@@ -187,6 +207,8 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="chromiumos/platform/libevdev" revision="refs/heads/firmware-android-15949.B" />
   <project path="src/platform/libevstate"
            name="chromiumos/platform/libevstate" revision="refs/heads/firmware-android-15949.B" />
+  <project path="src/platform/libva-fake-driver"
+           name="chromiumos/platform/libva-fake-driver" revision="refs/heads/main" />
   <project path="src/platform/microbenchmarks"
            name="chromiumos/platform/microbenchmarks" revision="refs/heads/firmware-android-15949.B" />
   <project path="src/platform/minigbm"
@@ -202,6 +224,8 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="chromiumos/platform/mosys" revision="refs/heads/firmware-android-15949.B" />
   <project path="src/platform/mttools"
            name="chromiumos/platform/mttools" revision="refs/heads/firmware-android-15949.B" />
+  <project path="src/platform/passport"
+           name="chromiumos/platform/passport" revision="refs/heads/main" />
   <project path="src/platform/pinweaver"
            name="chromiumos/platform/pinweaver"
            groups="fwsdk" revision="refs/heads/firmware-android-15949.B" />
@@ -659,6 +683,9 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="crosvm" revision="refs/heads/firmware-android-15949.B" />
   <project path="src/third_party/rust_crates"
            name="chromiumos/third_party/rust_crates" revision="refs/heads/firmware-android-15949.B" />
+  <project path="src/third_party/scx"
+           name="chromiumos/third_party/scx"
+           revision="refs/heads/chromeos-1.0.3" />
   <project path="src/third_party/shellcheck"
            name="chromiumos/third_party/shellcheck"
            revision="refs/heads/firmware-android-15949.B" />
@@ -778,6 +805,9 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="platform/build"
            revision="ddfd2f48895512149d43e35b79368c54cef16081"
            groups="bluetooth" />
+  <project path="src/aosp/external/avb"
+           remote="aosp"
+	  name="platform/external/avb" revision="refs/heads/main" />
   <project path="src/aosp/external/bsdiff"
            remote="aosp"
            name="platform/external/bsdiff"
@@ -884,6 +914,11 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="bluetooth" revision="e7c335232f8b9fad476fd968299de0ce9723aa85" />
 
   <!-- Infra projects. -->
+  <project path="infra/autotest-drone"
+           name="chromiumos/infra/autotest-drone"
+	   revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
   <project path="infra/chromite-HEAD"
            name="chromiumos/chromite"
            groups="buildtools,paygen" revision="refs/heads/main">
@@ -894,9 +929,29 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            groups="chromeos-admin" revision="refs/heads/main">
     <annotation name="branch-mode" value="tot" />
   </project>
+  <project path="infra/ide"
+           name="chromiumos/infra/ide" revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
   <project path="infra/proto"
            name="chromiumos/infra/proto" revision="refs/heads/main">
     <annotation name="branch-mode" value="tot" />
+  </project>
+  <project path="infra/recipes"
+           name="chromiumos/infra/recipes"
+           revision="refs/heads/main"
+           groups="chromeos-admin">
+    <annotation name="branch-mode" value="drop" />
+  </project>
+  <project path="infra/suite_scheduler"
+           name="chromiumos/infra/suite_scheduler" revision="refs/heads/main">
+    <annotation name="branch-mode" value="drop" />
+  </project>
+  <project path="infra/test-scheduling"
+           name="chromiumos/infra/test-scheduling"
+           revision="refs/heads/main"
+           groups="notdefault">
+    <annotation name="branch-mode" value="drop" />
   </project>
   <project path="infra_virtualenv"
            name="chromiumos/infra_virtualenv"
