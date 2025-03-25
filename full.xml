@@ -360,8 +360,6 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
            name="external/gob/boringssl/boringssl"
            revision="3e89a7e8db8139db356b892ca9993172346c80cf"
            groups="firmware" />
-  <!-- When updating breakpad, check if the linux-syscall-support pin in its
-       DEPS was updated, and thus needs to update lss below. -->
   <project path="src/third_party/breakpad"
            name="breakpad/breakpad"
            revision="eebe87c5810c298de57e7429ee914f3f2ab946a1" />  <!-- autoroll:breakpad -->
@@ -575,9 +573,6 @@ See https://www.chromium.org/chromium-os/developer-library/guides/development/de
   <project path="src/third_party/logitech-updater"
            name="chromiumos/third_party/logitech-updater"
            revision="refs/heads/master" />
-  <!-- The lss project is used by breakpad and pinned to the version declared in
-       the breakpad DEPS file.  Updates to that file should be reflected here by
-       hand. -->
   <project path="src/third_party/lss"
            name="linux-syscall-support"
            revision="ed31caa60f20a4f6569883b2d752ef7522de51e0" />  <!-- autoroll:lss -->
