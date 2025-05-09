@@ -16,6 +16,47 @@
       "message": "Please double check the exact syntax here.\n\nSome of the `refs/...` in this file have a leading `^`, some don\u0027t.\n\nSome have `refs/for`, some don\u0027t.",
       "revId": "a99e4dad86fbc155e02129fdeade30e05f7bbeb0",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bc8286c_13e47814",
+        "filename": "project.config",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1121730
+      },
+      "writtenOn": "2025-05-09T21:41:32Z",
+      "side": 1,
+      "message": "Needs to be stabilize-starline.  Also looking at a previous change (crrev.com/i/8198093) I think the wildcards expect .*.",
+      "range": {
+        "startLine": 219,
+        "startChar": 20,
+        "endLine": 219,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "e292097b_b3b892b5",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "project.config",
+              "range": {
+                "startLine": 219,
+                "startChar": 0,
+                "endLine": 220,
+                "endChar": 0
+              },
+              "replacement": "[access \"^refs/heads/stabilize-starline-.*\"]\n"
+            }
+          ]
+        }
+      ],
+      "revId": "a99e4dad86fbc155e02129fdeade30e05f7bbeb0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
