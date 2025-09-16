@@ -114,10 +114,10 @@ List of specific annotations we use:
         (see [go/cros-public-buildspecs](go/cros-public-buildspecs)).
 
 
-[CrOS Source Layout documentation]: https://chromium.googlesource.com/chromiumos/docs/+/HEAD/source_layout.md
+[CrOS Source Layout documentation]: https://www.chromium.org/chromium-os/developer-library/reference/development/source-layout/
 [cros_source recipe]: https://chromium.googlesource.com/chromiumos/infra/recipes/+/HEAD/recipe_modules/cros_source/api.py
 [file a bug]: https://issuetracker.google.com/issues/new?component=1037860&template=1600056
-[How do I test a manifest change? FAQ]: https://chromium.googlesource.com/chromiumos/docs/+/HEAD/source_layout.md#How-do-I-test-a-manifest-change
+[How do I test a manifest change? FAQ]: https://www.chromium.org/chromium-os/developer-library/reference/development/source-layout/#how-do-i-test-a-manifest-change
 [internal manifest project]: https://chrome-internal.googlesource.com/chromeos/manifest-internal
 [public manifest project]: https://chromium.googlesource.com/chromiumos/manifest
 [Repo tool]: https://gerrit.googlesource.com/git-repo/
