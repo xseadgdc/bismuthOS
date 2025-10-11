@@ -46,7 +46,7 @@
   <project name="chromium/src/third_party/shell-encryption" path="src/chromium/src/third_party/shell-encryption" remote="chromium" revision="7337a3afd20ff9112b45cccfe4b65a5406116540" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromium/src/third_party/tlslite" path="src/chromium/src/third_party/tlslite" remote="chromium" revision="05d9f22315757117685ad2f5265148f900f18034" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromium/src/tools/md_browser" path="src/chromium/src/tools/md_browser" remote="chromium" revision="b7cfebc8143108734248df4e855a1bff01173f77" upstream="refs/heads/main" dest-branch="refs/heads/main" />
-  <project name="chromium/tools/depot_tools" path="src/chromium/depot_tools" remote="chromium" revision="88b3c4e0b1f356fce125752dbac35f9745767e0d" groups="minilayout,paygen,firmware,buildtools,labtools,ti50" />
+  <project name="chromium/tools/depot_tools" path="src/chromium/depot_tools" remote="chromium" revision="3008b57e5d18ee9c92baf851dd33c61cfd6fad21" groups="minilayout,paygen,firmware,buildtools,labtools,ti50" />
   <project name="chromiumos/bazel" path="src/bazel" revision="5cff431e52d88bccba9ddaea365d7f4365d67396" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,bazel,fwsdk,firmware,ti50">
     <linkfile src="workspace_root/general/WORKSPACE" dest="src/WORKSPACE" />
   </project>
@@ -92,9 +92,9 @@
     <annotation name="branch-mode" value="drop" />
   </project>
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="ff172ec8a3dab94323414de086456b19f8bdcb19" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,labtools,sysmon,devserver" />
-  <project name="chromiumos/manifest" path="manifest" revision="b146e8c51dc81cba188ead8b4513c2b58c8ef78a" upstream="refs/heads/main" dest-branch="refs/heads/main" />
+  <project name="chromiumos/manifest" path="manifest" revision="29fb80ce3df4b8b08b768f5be34a3be7f15f9a91" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="7c4ce30839e6a44060730f41b7d9b29306ced528" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware" />
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="35a1fd0576fcade3da40caa35bd015417ddadfbb" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools,ti50" sync-c="true" />
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="b85247e232c8868a40adbb19509e157e51ac2b02" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools,ti50" sync-c="true" />
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="c7e7ec611c9eb12c26ef795cc442eca92fa659d6" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="495ab51ba82ead59f9e3382ed9fbee25f2a69755" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="f4ca17b74b59edb39ecab29eae0c03dfa153e33e" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,labtools" />
@@ -122,7 +122,7 @@
   <project name="chromiumos/platform/dev-util" path="src/platform/dev" revision="af5942b5a4f735b0dd1dca84e13d903a8091c593" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,firmware,buildtools,devserver" />
   <project name="chromiumos/platform/dolos" path="src/platform/dolos" revision="c13d5bac8e2febc8ae5c5731c0fba97af26c3ab6" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/drm-tests" path="src/platform/drm-tests" revision="4626f162f32e46adc4f0b804948bbf36ab690397" upstream="refs/heads/main" dest-branch="refs/heads/main" />
-  <project name="chromiumos/platform/ec" path="src/platform/cr50" revision="e236404ecc036e068c469c950e7248d5c808fde3" upstream="refs/heads/cr50_stab" dest-branch="refs/heads/cr50_stab" groups="paygen,firmware" />
+  <project name="chromiumos/platform/ec" path="src/platform/cr50" revision="e61e59e58024fb2c4faa572285e0336e4436aaeb" upstream="refs/heads/cr50_stab" dest-branch="refs/heads/cr50_stab" groups="paygen,firmware" />
   <project name="chromiumos/platform/ec" path="src/platform/ec" revision="376b6bee870531b674c2d2cdc16d4b5ba9bc2256" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="paygen,firmware,fwsdk" />
   <project name="chromiumos/platform/ec" path="src/platform/gsc-utils" revision="6c3c0487a12c7f37da20d92ce883ba4467b1ff27" upstream="refs/heads/gsc_utils" dest-branch="refs/heads/gsc_utils" groups="ti50" />
   <project name="chromiumos/platform/ec" path="src/platform/ish" revision="0349b538289a073973b9c06b1ebb06d8099cb572" upstream="refs/heads/ish" dest-branch="refs/heads/ish" groups="firmware" />
@@ -173,7 +173,7 @@
   <project name="chromiumos/platform/satlab" path="src/platform/satlab" revision="4642bb629c4c716baaeb06afd13c1423ffcf740b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="notdefault,satlab" />
   <project name="chromiumos/platform/spdm" path="src/platform/spdm" revision="801e6cb26d7a455a20efbbef698da5e4a5e310ab" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/tast" path="src/platform/tast" revision="6bf56fcb9428e5f69a57a2ba80acf9b76abd9925" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,ti50" />
-  <project name="chromiumos/platform/tast-tests" path="src/platform/tast-tests" revision="4f671b9291b3cc0d6dfc14fc77a16d8fc988704d" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,ti50" />
+  <project name="chromiumos/platform/tast-tests" path="src/platform/tast-tests" revision="8d2f0b9630a52a9189569bb39fd13b1f2c7cb03d" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="minilayout,paygen,ti50" />
   <project name="chromiumos/platform/tauto" path="src/platform/tauto" revision="76e63bd377b8b6ac067bf10040e65a0f21d3db3c" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/tflite" path="src/platform/tflite" revision="683bdd4de3f18ed32cf32d4744683676c4ca3479" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/platform/touch_firmware_test" path="src/platform/touch_firmware_test" revision="82215f40ffd2f04f7566e2b5bef3871cbd25cd04" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware" />
@@ -334,7 +334,7 @@
   <project name="copybot" path="infra/copybot" revision="be1a4f99ddcf2cd9618dd3cc8b6af7d7c72c6f4d" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="drop" />
   </project>
-  <project name="external/github.com/bazelbuild/bazel-central-registry" path="bazel_deps/bazel-central-registry" revision="c564459a2122cf6536961b3c82a74196399528a6" upstream="refs/heads/upstream/main" dest-branch="refs/heads/upstream/main" groups="minilayout,bazel,fwsdk,firmware,ti50" />
+  <project name="external/github.com/bazelbuild/bazel-central-registry" path="bazel_deps/bazel-central-registry" revision="f00db1b0445dec391d20d932601d930476516615" upstream="refs/heads/upstream/main" dest-branch="refs/heads/upstream/main" groups="minilayout,bazel,fwsdk,firmware,ti50" />
   <project name="external/github.com/google/googletest" path="src/third_party/googletest" revision="6910c9d9165801d8827d628cb72eb7ea9dd538c5" upstream="refs/tags/v1.16.0" dest-branch="refs/tags/v1.16.0" groups="firmware" />
   <project name="external/github.com/google/gtest-parallel" path="src/third_party/gtest-parallel" revision="cd488bdedc1d2cffb98201a17afc1b298b0b90f1" groups="minilayout" />
   <project name="external/github.com/google/perfetto" path="src/third_party/perfetto" revision="9fb704869663f154104aca5ba4047610f0039370" />
