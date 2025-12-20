@@ -94,7 +94,7 @@
   <project name="chromiumos/infra_virtualenv" path="infra_virtualenv" revision="ff172ec8a3dab94323414de086456b19f8bdcb19" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="buildtools,chromeos-admin,devserver,labtools,sysmon" />
   <project name="chromiumos/manifest" path="manifest" revision="405471b561ace70d1b339b340ff19e9311012d34" upstream="refs/heads/main" dest-branch="refs/heads/main" />
   <project name="chromiumos/overlays/board-overlays" path="src/overlays" revision="491a0d1a964473853817702c14316ec8289fe31a" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,minilayout,paygen" />
-  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="8026a88c2abe8dd743b0a45939a272a9fe83abbb" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,labtools,minilayout,paygen,ti50" sync-c="true" />
+  <project name="chromiumos/overlays/chromiumos-overlay" path="src/third_party/chromiumos-overlay" revision="0415192556b5afeeb4277f7384f25e0dcfc54e99" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,labtools,minilayout,paygen,ti50" sync-c="true" />
   <project name="chromiumos/overlays/eclass-overlay" path="src/third_party/eclass-overlay" revision="c7e7ec611c9eb12c26ef795cc442eca92fa659d6" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,labtools,minilayout,paygen" />
   <project name="chromiumos/overlays/portage-stable" path="src/third_party/portage-stable" revision="576775fe70565fafb9ca8875b936a9145ccf4414" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,labtools,minilayout,paygen" />
   <project name="chromiumos/overlays/toolchains" path="src/third_party/toolchains-overlay" revision="e824a760ab88ab072535cd327f959c9bbf21dc53" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,labtools,minilayout,paygen" />
@@ -326,18 +326,18 @@
   <project name="chromiumos/third_party/zephyr" path="src/platform/release-firmware/fpmcu-helipilot/zephyr" revision="f8093447f8d4a7adc52940307bde3df7c1328004" upstream="refs/heads/firmware-fpmcu-helipilot-release" dest-branch="refs/heads/firmware-fpmcu-helipilot-release" groups="firmware,zephyr">
     <annotation name="branch-mode" value="pin" />
   </project>
-  <project name="chromiumos/third_party/zephyr" path="src/third_party/zephyr/main" revision="54302f6d180fe1a895dfe619076509f773f3f123" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
+  <project name="chromiumos/third_party/zephyr" path="src/third_party/zephyr/main" revision="bab1b9cc563f162c333d77b3ee6cc65138838b29" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
   <project name="chromiumos/third_party/zephyr/cmsis" path="src/third_party/zephyr/cmsis" revision="818dedc88d61e87ffde020d245d007a548204d80" upstream="refs/heads/chromeos-main" dest-branch="refs/heads/chromeos-main" groups="firmware,fwsdk,zephyr" />
   <project name="chromiumos/third_party/zephyr/cmsis_6" path="src/third_party/zephyr/cmsis_6" revision="a04b38d91cda4ff3064d67349006f23b2ba8273b" upstream="refs/heads/chromeos-main" dest-branch="refs/heads/chromeos-main" groups="firmware,fwsdk,zephyr" />
   <project name="chromiumos/third_party/zephyr/hal_intel" path="src/third_party/zephyr/hal_intel_public" revision="c1770a0d30196b35c35784bae32701508975f38a" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
   <project name="chromiumos/third_party/zephyr/hal_stm32" path="src/third_party/zephyr/hal_stm32" revision="2a535edbfb51d2524578a1b8f8342e9644ac0864" upstream="refs/heads/chromeos-main" dest-branch="refs/heads/chromeos-main" groups="firmware,fwsdk,zephyr" />
   <project name="chromiumos/third_party/zephyr/nanopb" path="src/third_party/zephyr/nanopb" revision="89c334836f210b1e62903d1cd53d3b62abe3595b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
   <project name="chromiumos/third_party/zephyr/picolibc" path="src/third_party/zephyr/picolibc" revision="b8356ec9367c21645685e287d0288b918e6ed086" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
-  <project name="chromiumos/third_party/zephyrproject" path="src/third_party/zephyrproject" revision="04ab7c91ba7483fbee57de463b4f715d3119def2" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
+  <project name="chromiumos/third_party/zephyrproject" path="src/third_party/zephyrproject" revision="dca777cc29c175128704e591c611f829f5a62b7b" upstream="refs/heads/main" dest-branch="refs/heads/main" groups="firmware,fwsdk,zephyr" />
   <project name="copybot" path="infra/copybot" revision="389e979fb00eff2d77fd9ebe057a5bc7ca034817" upstream="refs/heads/main" dest-branch="refs/heads/main">
     <annotation name="branch-mode" value="drop" />
   </project>
-  <project name="external/github.com/bazelbuild/bazel-central-registry" path="bazel_deps/bazel-central-registry" revision="f0aa922fddd3abd912e550542f1ed6a290fc66d0" upstream="refs/heads/upstream/main" dest-branch="refs/heads/upstream/main" groups="bazel,firmware,fwsdk,minilayout,ti50" />
+  <project name="external/github.com/bazelbuild/bazel-central-registry" path="bazel_deps/bazel-central-registry" revision="8fe0acf58cc679989fc9e64a61ed562993f06b3e" upstream="refs/heads/upstream/main" dest-branch="refs/heads/upstream/main" groups="bazel,firmware,fwsdk,minilayout,ti50" />
   <project name="external/github.com/google/googletest" path="src/third_party/googletest" revision="6910c9d9165801d8827d628cb72eb7ea9dd538c5" upstream="refs/tags/v1.16.0" dest-branch="refs/tags/v1.16.0" groups="firmware" />
   <project name="external/github.com/google/gtest-parallel" path="src/third_party/gtest-parallel" revision="cd488bdedc1d2cffb98201a17afc1b298b0b90f1" groups="minilayout" />
   <project name="external/github.com/google/perfetto" path="src/third_party/perfetto" revision="bb5f4f019e2a1b5bc6e4c8203f05890d96467cf7" />
