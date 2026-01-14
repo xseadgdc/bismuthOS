@@ -15,8 +15,8 @@ jobs:
           REPO_PATH: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
         run: |
-          # 1. Clone the source as a bare mirror (metadata only, no working files)
-          git clone --mirror "https://chromium.googlesource.com/chromiumos" chromiumos-mirror
+          # 1. Clone the entire source as a mirror (fetches all branches/tags)
+          git clone --mirror "https://chromium.googlesource.com/chromiumos/manifest.git" chromiumos-mirror
           cd chromiumos-mirror
           
           # 2. Add remote with correctly formatted authenticated URL
