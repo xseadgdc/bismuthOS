@@ -6,16 +6,18 @@ jobs:
   mirror_repository:
     runs-on: ubuntu-latest
     steps:
-      - name: Mirror Google Source to GitHub
+      - name: Mirror Google Source to GitHub        
+        env:
+          # Use env to safely pass the repo path into the shell
+          REPO_PATH: ${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
         run: |
           # 1. Clone the source as a bare mirror (metadata only, no working files)
-          git clone --mirror https://chromium.googlesource.com/chromiumos chromiumos-mirror
+          git clone --mirror "https://chromium.googlesource.com/chromiumos" chromiumos-mirror
           cd chromiumos-mirror
           
-          # 2. Set the destination to your current GitHub repo
-          # The GITHUB_TOKEN is automatically provided by GitHub Actions
-          git remote add github https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com{{ github.repository }}.git
+          # 2. Add remote with correctly formatted authenticated URL
+          git remote add github "https://x-access-token:${GH_TOKEN}@github.com{REPO_PATH}.git"
           
-          # 3. Push all branches and tags to your GitHub repo
+          # 3. Force push to overwrite the current repo with the mirror
           git push --mirror github
-
