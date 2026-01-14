@@ -17,7 +17,7 @@ jobs:
           cd chromiumos-mirror
           
           # 2. Add remote with correctly formatted authenticated URL
-          git remote add github "https://x-access-token:${GH_TOKEN}@github.com{REPO_PATH}.git"
+          git remote add github "https://x-access-token:${GH_TOKEN}@github.com/${REPO_PATH}.git"
           
           # 3. Force push to overwrite the current repo with the mirror
           git push --mirror github
