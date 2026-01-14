@@ -5,6 +5,9 @@ on:
 jobs:
   mirror_repository:
     runs-on: ubuntu-latest
+    # Explicitly grant write access to the job
+    permissions:
+      contents: write 
     steps:
       - name: Mirror Google Source to GitHub        
         env:
