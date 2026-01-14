@@ -1,0 +1,7 @@
+steps:
+  - name: Mirror ChromiumOS Source to GitHub
+    run: |
+      git clone --mirror https://chromium.googlesource.com/chromiumos chromiumos-base
+      cd chromiumos-base
+      git remote add github https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com{{ github.repository }}.git
+      git push --mirror github
