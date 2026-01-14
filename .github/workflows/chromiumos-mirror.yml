@@ -9,18 +9,21 @@ jobs:
     permissions:
       contents: write 
     steps:
-      - name: Mirror Google Source to GitHub        
+      - name: Hard-Fork Mirror       
         env:
           # Use env to safely pass the repo path into the shell
           REPO_PATH: ${{ github.repository }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}      
         run: |
-          # 1. Clone the entire source as a mirror (fetches all branches/tags)
-          git clone --mirror "https://chromium.googlesource.com/chromiumos/manifest.git" chromiumos-mirror
-          cd chromiumos-mirror
+          # 1. Bare clone from Google
+          git clone --mirror "https://chromium.googlesource.com/chromiumos/manifest.git" temp-repo
+          cd temp-repo
           
-          # 2. Add remote with correctly formatted authenticated URL
+          # 2. Add authenticated GitHub remote
           git remote add github "https://x-access-token:${GH_TOKEN}@github.com/${REPO_PATH}.git"
           
-          # 3. Force push to overwrite the current repo with the mirror
-          git push --mirror github
+          # 3. Targeted Push
+          # This pushes all branches and tags from Google to your repo.
+          # If it fails on the 'main' or 'master' branch, it's because that branch is PROTECTED.
+          git push github --all --force
+          git push github --tags --force
