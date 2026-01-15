@@ -22,52 +22,50 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          # 1. Verify manifest existence
+          # 1. Identify the manifest
           MANIFEST_FILE="full.xml"
-          
-          # 2. Indestructible Extraction
-          # We capture the name and ensure we don't pick up the manifest itself
-          REPOS=$(perl -ne 'print "$1\n" if /name=["\x27]([^"\x27]+)["\x27]/' "$MANIFEST_FILE" | grep -v 'manifest' | head -n ${{ github.event.inputs.limit }})
+
+          # 2. Strict Extraction
+          # We only want names that do NOT end in .xml and are not the manifest itself
+          REPOS=$(perl -ne 'print "$1\n" if /name=["\x27]([^"\x27]+)["\x27]/' "$MANIFEST_FILE" | grep -v '\.xml$' | grep -v 'manifest' | head -n ${{ github.event.inputs.limit }})
 
           if [ -z "$REPOS" ]; then
-            echo "ERROR: Extraction failed."
+            echo "ERROR: No valid repositories found."
             exit 1
           fi
 
-          # 3. Process the loop
           for REPO in $REPOS; do
             # Clean name for GitHub (replace slashes, dots, and colons)
             NAME=$(echo "$REPO" | sed 's/[\/\.:]/-/g')
             
+            echo "------------------------------------------"
             echo "Processing: $REPO -> $NAME"
             
-            # Create the repo
-            gh repo create "$NAME" --public --description "BismuthOS component: $REPO" || echo "Repo exists."
+            # Create the repo on GitHub
+            gh repo create "$NAME" --public --description "bismuthOS component: $REPO" || echo "Repo $NAME already exists."
             
-            # Stable mirror settings
+            # Set source URL - Append .git if not present
+            SOURCE_URL="https://chromium.googlesource.com/$REPO.git"
+            
+            # Configure Git for 2026 stability
             git config --global http.version HTTP/1.1
-            
-            # FIX: Check if the REPO name already starts with chromiumos/ or infra/
-            # If it does, we don't add anything extra.
-            if [[ "$REPO" == http* ]]; then
-               SOURCE_URL="$REPO"
-            else
-               SOURCE_URL="https://chromium.googlesource.com/$REPO.git"
-            fi
-
-            echo "Cloning from: $SOURCE_URL"
             
             if git clone --mirror "$SOURCE_URL" temp-dir; then
               cd temp-dir
-              git remote add github "https://x-access-token:${GH_TOKEN}@github.com{{ github.repository_owner }}/$NAME.git"
-              # Force push to ensure it works even if repo was partially initialized
+              
+              # FIX: Use the environment variable REPO_OWNER instead of the double-curly brace syntax in the shell
+              REMOTE_URL="https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository_owner }}/${NAME}.git"
+              
+              git remote add github "$REMOTE_URL"
+              
+              echo "Pushing to GitHub..."
               git push --mirror github || echo "Push failed for $NAME"
+              
               cd ..
               rm -rf temp-dir
               echo "Successfully finished $NAME"
             else
               echo "Failed to clone $SOURCE_URL - skipping."
-              cd "$GITHUB_WORKSPACE"
               rm -rf temp-dir
             fi
           done
