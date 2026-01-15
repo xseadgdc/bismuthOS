@@ -22,16 +22,20 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          # 1. Ensure we are using the populated manifest
+          # 1. Verify manifest existence
           MANIFEST_FILE="full.xml"
-          echo "Using manifest source: $MANIFEST_FILE"
+          if [ ! -f "$MANIFEST_FILE" ]; then
+            echo "ERROR: $MANIFEST_FILE not found."
+            exit 1
+          fi
 
-          # 2. Advanced Extraction
-          # This uses awk to specifically find the 'name=' field, which is safer than sed/grep in 2026
-          REPOS=$(grep "<project>" "$MANIFEST_FILE" | awk -F'name="' '{print $2}' | awk -F'"' '{print $1}' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
+          # 2. Indestructible Extraction using Perl
+          # This looks for 'name=' followed by either " or ' and captures until the closing quote
+          REPOS=$(perl -ne 'print "$1\n" if /name=["\x27]([^"\x27]+)["\x27]/' "$MANIFEST_FILE" | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
 
           if [ -z "$REPOS" ]; then
-            echo "ERROR: Extraction still returned no results."
+            echo "ERROR: Extraction failed. Printing manifest snippet for debug:"
+            grep "<project" "$MANIFEST_FILE" | head -n 5
             exit 1
           fi
           
