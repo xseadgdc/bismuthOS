@@ -24,23 +24,29 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          git config --global http.version HTTP/1.1
-          REPOS=$(grep -E '<project.*name=' default.xml | sed -E 's/.*name="([^"]+)".*/\1/' | head -n ${{ github.event.inputs.limit }})
-
-          # 1. Check if we need to search full.xml instead
+          # 1. Determine the real manifest file (Resolve symlinks)
           MANIFEST_FILE="default.xml"
-          if [ ! -f "default.xml" ] || [ ! -s "default.xml" ]; then
-            MANIFEST_FILE="full.xml"
-          fi
           
-          echo "Using manifest file: $MANIFEST_FILE"
+          # If it's a symlink, find where it points
+          if [ -L "$MANIFEST_FILE" ]; then
+            TARGET=$(readlink "$MANIFEST_FILE")
+            echo "default.xml is a symlink to: $TARGET"
+            MANIFEST_FILE="$TARGET"
+          fi
 
-          # 2. Improved Extraction: More robust regex to handle spaces and different formats
+          # Fail safely if the file doesn't exist or is empty
+          if [ ! -f "$MANIFEST_FILE" ] || [ ! -s "$MANIFEST_FILE" ]; then
+            echo "ERROR: $MANIFEST_FILE not found or empty. Checking for full.xml..."
+            if [ -f "full.xml" ]; then MANIFEST_FILE="full.xml"; else exit 1; fi
+          fi
+
+          echo "Using manifest source: $MANIFEST_FILE"
+
+          # 2. Extract project names using a more robust regex
           REPOS=$(grep -E '<project.*name=' "$MANIFEST_FILE" | sed -E 's/.*name="([^"]+)".*/\1/' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
 
-          # 3. Validation: Stop if no repos were found
           if [ -z "$REPOS" ]; then
-            echo "ERROR: No repositories found in $MANIFEST_FILE. Please check if the file exists and contains <project> tags."
+            echo "ERROR: No repositories found in $MANIFEST_FILE."
             exit 1
           fi
 
