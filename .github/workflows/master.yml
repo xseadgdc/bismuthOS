@@ -24,35 +24,50 @@ jobs:
         run: |
           # 1. Verify manifest existence
           MANIFEST_FILE="full.xml"
-          if [ ! -f "$MANIFEST_FILE" ]; then
-            echo "ERROR: $MANIFEST_FILE not found."
-            exit 1
-          fi
-
-          # 2. Indestructible Extraction using Perl
-          # This looks for 'name=' followed by either " or ' and captures until the closing quote
-          REPOS=$(perl -ne 'print "$1\n" if /name=["\x27]([^"\x27]+)["\x27]/' "$MANIFEST_FILE" | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
+          
+          # 2. Indestructible Extraction
+          # We capture the name and ensure we don't pick up the manifest itself
+          REPOS=$(perl -ne 'print "$1\n" if /name=["\x27]([^"\x27]+)["\x27]/' "$MANIFEST_FILE" | grep -v 'manifest' | head -n ${{ github.event.inputs.limit }})
 
           if [ -z "$REPOS" ]; then
-            echo "ERROR: Extraction failed. Printing manifest snippet for debug:"
-            grep "<project" "$MANIFEST_FILE" | head -n 5
+            echo "ERROR: Extraction failed."
             exit 1
           fi
-          
+
           # 3. Process the loop
           for REPO in $REPOS; do
-            NAME=$(echo "$REPO" | sed 's/\//-/g')
-            echo "Processing: $REPO as $NAME"
+            # Clean name for GitHub (replace slashes, dots, and colons)
+            NAME=$(echo "$REPO" | sed 's/[\/\.:]/-/g')
+            
+            echo "Processing: $REPO -> $NAME"
+            
+            # Create the repo
+            gh repo create "$NAME" --public --description "BismuthOS component: $REPO" || echo "Repo exists."
+            
+            # Stable mirror settings
+            git config --global http.version HTTP/1.1
+            
+            # FIX: Check if the REPO name already starts with chromiumos/ or infra/
+            # If it does, we don't add anything extra.
+            if [[ "$REPO" == http* ]]; then
+               SOURCE_URL="$REPO"
+            else
+               SOURCE_URL="https://chromium.googlesource.com/$REPO.git"
+            fi
 
-            gh repo create "$NAME" --public --description "chromiumos: $REPO" || echo "Repo may already exist"
-
-            git clone --mirror "https://chromium.googlesource.com/chromiumos/$REPO.git" temp-dir
-            cd temp-dir
-
-            git remote add github "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository_owner }}/$NAME.git"
-            git push --mirror github
-
-            cd ..
-            rm -rf temp-dir
-            echo "Mirrored: $NAME"
-          done   
+            echo "Cloning from: $SOURCE_URL"
+            
+            if git clone --mirror "$SOURCE_URL" temp-dir; then
+              cd temp-dir
+              git remote add github "https://x-access-token:${GH_TOKEN}@github.com{{ github.repository_owner }}/$NAME.git"
+              # Force push to ensure it works even if repo was partially initialized
+              git push --mirror github || echo "Push failed for $NAME"
+              cd ..
+              rm -rf temp-dir
+              echo "Successfully finished $NAME"
+            else
+              echo "Failed to clone $SOURCE_URL - skipping."
+              cd "$GITHUB_WORKSPACE"
+              rm -rf temp-dir
+            fi
+          done
