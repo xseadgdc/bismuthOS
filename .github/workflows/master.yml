@@ -27,6 +27,23 @@ jobs:
           git config --global http.version HTTP/1.1
           REPOS=$(grep -E '<project.*name=' default.xml | sed -E 's/.*name="([^"]+)".*/\1/' | head -n ${{ github.event.inputs.limit }})
 
+          # 1. Check if we need to search full.xml instead
+          MANIFEST_FILE="default.xml"
+          if [ ! -f "default.xml" ] || [ ! -s "default.xml" ]; then
+            MANIFEST_FILE="full.xml"
+          fi
+          
+          echo "Using manifest file: $MANIFEST_FILE"
+
+          # 2. Improved Extraction: More robust regex to handle spaces and different formats
+          REPOS=$(grep -E '<project.*name=' "$MANIFEST_FILE" | sed -E 's/.*name="([^"]+)".*/\1/' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
+
+          # 3. Validation: Stop if no repos were found
+          if [ -z "$REPOS" ]; then
+            echo "ERROR: No repositories found in $MANIFEST_FILE. Please check if the file exists and contains <project> tags."
+            exit 1
+          fi
+
           for REPO in $REPOS; do
             NAME=$(echo "$REPO" | sed 's/\//-/g')
             echo "Processing: $REPO as $NAME"
