@@ -22,21 +22,19 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          # 1. Force use the large full.xml
+          # 1. Ensure we are using the populated manifest
           MANIFEST_FILE="full.xml"
           echo "Using manifest source: $MANIFEST_FILE"
 
-          # 2. Robust Extraction
-          # Use '|| true' to prevent grep from failing the job if it finds no match
-          # We use a pattern that finds 'name=' followed by either " or '
-          REPOS=$(grep -i '<project' "$MANIFEST_FILE" | sed -E "s/.*name=['\"]([^'\"]+)['\"].*/\1/" | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }}) || true
+          # 2. Advanced Extraction
+          # This uses awk to specifically find the 'name=' field, which is safer than sed/grep in 2026
+          REPOS=$(grep "<project>" "$MANIFEST_FILE" | awk -F'name="' '{print $2}' | awk -F'"' '{print $1}' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
 
           if [ -z "$REPOS" ]; then
-            echo "ERROR: Extraction still returned no results. Printing first 10 lines of manifest for debug:"
-            head -n 10 "$MANIFEST_FILE"
+            echo "ERROR: Extraction still returned no results."
             exit 1
           fi
-
+          
           # 3. Process the loop
           for REPO in $REPOS; do
             NAME=$(echo "$REPO" | sed 's/\//-/g')
