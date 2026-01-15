@@ -14,24 +14,32 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
+      - name: Download default.xml
+        run: |
+          curl -s -o default.xml https://chromium.googlesource.com/chromiumos/manifest.git/+/refs/heads/main/default.xml?format=TEXT
+          echo "$(<default.xml)" | base64 -d > default.xml
+
       - name: Parse and Mirror
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          # 1. Extract the first X repository names from the manifest
-          REPOS=$(grep -oP 'name="\K[^"]+' default.xml | head -n ${{ github.event.inputs.limit }})
-          
+          git config --global http.version HTTP/1.1
+          REPOS=$(grep -E '<project.*name=' default.xml | sed -E 's/.*name="([^"]+)".*/\1/' | head -n ${{ github.event.inputs.limit }})
+
           for REPO in $REPOS; do
-            NAME=$(echo $REPO | sed 's/\//-/g') # Replace slashes for GitHub names
-            echo "Processing $REPO as $NAME..."
-            
-            # 2. Create the target repo on your GitHub account if it doesn't exist
-            gh repo create "$NAME" --public || echo "Repo already exists"
-            
-            # 3. Mirror from Google directly to the new GitHub repo
-            git clone --mirror https://chromium.googlesource.com/chromium/src.git temp-dir
+            NAME=$(echo "$REPO" | sed 's/\//-/g')
+            echo "Processing: $REPO as $NAME"
+
+            gh repo create "$NAME" --public --description "chromiumos: $REPO" || echo "Repo may already exist"
+
+            git clone --mirror "https://chromium.googlesource.com/chromiumos/$REPO.git" temp-dir
             cd temp-dir
-            git remote add github "https://x-access-token:${GH_TOKEN}@github.com{{ github.repository_owner }}/$NAME.git"
+
+            git remote add github "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository_owner }}/$NAME.git"
             git push --mirror github
-            cd .. && rm -rf temp-dir
-          done  
+
+            cd ..
+            rm -rf temp-dir
+            echo "Mirrored: $NAME"
+          done   
