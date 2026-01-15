@@ -13,12 +13,10 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Download default.xml
-        run: |
-          curl -s -o default.xml https://chromium.googlesource.com/chromiumos/manifest.git/+/refs/heads/main/default.xml?format=TEXT
-          echo "$(<default.xml)" | base64 -d > default.xml
+      - name: Checkout Manifest Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Ensures the runner pulls actual file content, not just refs
 
       - name: Parse and Mirror
         env:
