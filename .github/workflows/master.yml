@@ -22,26 +22,22 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          # 1. Locate the correct manifest file
-          # We search for any XML containing "<project>" tags to avoid symlink issues
-          MANIFEST_FILE=$(grep -l "<project>" *.xml | head -n 1)
-          
-          if [ -z "$MANIFEST_FILE" ]; then
-            echo "ERROR: Could not find any XML file containing <project> tags."
-            ls -la # Log files for debugging
-            exit 1
-          fi
+          # 1. Force use the large full.xml
+          MANIFEST_FILE="full.xml"
           echo "Using manifest source: $MANIFEST_FILE"
 
-          # 2. Extract project names 
-          # Improved regex to handle the specific spacing in your XML snippet
-          REPOS=$(grep -E '<project' "$MANIFEST_FILE" | sed -E 's/.*name="([^"]+)".*/\1/' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
+          # 2. Robust Extraction
+          # Use '|| true' to prevent grep from failing the job if it finds no match
+          # We use a pattern that finds 'name=' followed by either " or '
+          REPOS=$(grep -i '<project' "$MANIFEST_FILE" | sed -E "s/.*name=['\"]([^'\"]+)['\"].*/\1/" | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }}) || true
 
           if [ -z "$REPOS" ]; then
-            echo "ERROR: Extraction failed. REPOS variable is empty."
+            echo "ERROR: Extraction still returned no results. Printing first 10 lines of manifest for debug:"
+            head -n 10 "$MANIFEST_FILE"
             exit 1
           fi
 
+          # 3. Process the loop
           for REPO in $REPOS; do
             NAME=$(echo "$REPO" | sed 's/\//-/g')
             echo "Processing: $REPO as $NAME"
