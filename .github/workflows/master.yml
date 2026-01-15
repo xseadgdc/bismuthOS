@@ -24,29 +24,23 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.MY_PAT }}
         run: |
-          # 1. Determine the real manifest file (Resolve symlinks)
-          MANIFEST_FILE="default.xml"
+          # 1. Locate the correct manifest file
+          # We search for any XML containing "<project>" tags to avoid symlink issues
+          MANIFEST_FILE=$(grep -l "<project>" *.xml | head -n 1)
           
-          # If it's a symlink, find where it points
-          if [ -L "$MANIFEST_FILE" ]; then
-            TARGET=$(readlink "$MANIFEST_FILE")
-            echo "default.xml is a symlink to: $TARGET"
-            MANIFEST_FILE="$TARGET"
+          if [ -z "$MANIFEST_FILE" ]; then
+            echo "ERROR: Could not find any XML file containing <project> tags."
+            ls -la # Log files for debugging
+            exit 1
           fi
-
-          # Fail safely if the file doesn't exist or is empty
-          if [ ! -f "$MANIFEST_FILE" ] || [ ! -s "$MANIFEST_FILE" ]; then
-            echo "ERROR: $MANIFEST_FILE not found or empty. Checking for full.xml..."
-            if [ -f "full.xml" ]; then MANIFEST_FILE="full.xml"; else exit 1; fi
-          fi
-
           echo "Using manifest source: $MANIFEST_FILE"
 
-          # 2. Extract project names using a more robust regex
-          REPOS=$(grep -E '<project.*name=' "$MANIFEST_FILE" | sed -E 's/.*name="([^"]+)".*/\1/' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
+          # 2. Extract project names 
+          # Improved regex to handle the specific spacing in your XML snippet
+          REPOS=$(grep -E '<project' "$MANIFEST_FILE" | sed -E 's/.*name="([^"]+)".*/\1/' | grep -v '\.xml' | head -n ${{ github.event.inputs.limit }})
 
           if [ -z "$REPOS" ]; then
-            echo "ERROR: No repositories found in $MANIFEST_FILE."
+            echo "ERROR: Extraction failed. REPOS variable is empty."
             exit 1
           fi
 
